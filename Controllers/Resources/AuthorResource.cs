@@ -1,11 +1,9 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Biblioteca.Core.Models
+namespace Biblioteca.Controllers.Resources
 {
-    [Table("Authors")]
-    public class Author
+    public class AuthorResource
     {
         public int Id { get; set; }
         [Required]
@@ -14,6 +12,5 @@ namespace Biblioteca.Core.Models
         [StringLength(255)]
         public string LastName { get; set; }
         public DateTime BirthDay { get; set; }
-        public DateTime LastUpdate { get; set; }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
@@ -19,5 +20,6 @@ namespace Biblioteca.Core.Models
         public int AuthorId { get; set; }
         public ICollection<BookCategory> BookCategories { get; set; }
         public string ISBN { get; set; }
+        public DateTime LastUpdate { get; set; }
     }
 }
