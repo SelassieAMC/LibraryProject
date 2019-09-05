@@ -9,8 +9,11 @@ namespace Biblioteca.Mapping
         public MappingProfile(){
             //Domain model to API Resource
             CreateMap<Author, AuthorResource>();
+            CreateMap<Category,CategoryResource>();
+            
             //API Resource to Domain Model
             CreateMap<AuthorResource,Author>();
+            CreateMap<CategoryResource,Category>();
         }
     }
 }
