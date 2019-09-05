@@ -13,7 +13,7 @@ namespace Biblioteca.Core.Models
         public string Name { get; set; }
         [StringLength(255)]
         public string LastName { get; set; }
-        public DateTime BirthDay { get; set; }
-        public DateTime LastUpdate { get; set; }
+        public DateTime? BirthDay { get; set; }
+        public DateTime? LastUpdate { get; set; }
     }
 }

@@ -14,13 +14,18 @@ namespace Biblioteca.Controllers
         private readonly IMapper mapper;
         private readonly IAuthorsRepository authorsRepository;
         private readonly IUnitOfWork unitOfWork;
+        ///Constructor con los servicios inyectados
+        ///mapper = mapeo de objetos automatico, repositorio = desacoplamiento de ORM, 
+        ///unitOfWork division de instancias para almacenado en BD
         public AuthorController(IMapper mapper, IAuthorsRepository authorsRepository, IUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
             this.authorsRepository = authorsRepository;
             this.mapper = mapper;
-
         }
+        ///Metodo post para agregar un autor a base de datos
+        ///recibe un objecto authorResource en formato JSON
+        ///Devuelve resultado con respuesta del proceso ejecutado
         [HttpPost]
         public async Task<IActionResult> AddAuthor([FromBody] AuthorResource authorResource)
         {
@@ -30,6 +35,7 @@ namespace Biblioteca.Controllers
                     return BadRequest(ModelState);
 
                 var author = mapper.Map<AuthorResource, Author>(authorResource);
+                author.LastUpdate = DateTime.Now;
                 authorsRepository.AddAuthorAsync(author);
                 await unitOfWork.CompleteAsync();
 
@@ -42,7 +48,10 @@ namespace Biblioteca.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPut("/update/{id}")]
+        ///Metodo post para actualizar un autor en base de datos, 
+        ///Recibe el id del autor y un objecto authorResource en formato JSON
+        ///Devuelve resultado con respuesta del proceso ejecutado
+        [HttpPost("update/{authorId}")]
         public async Task<IActionResult> UpdateAuthor(int authorId, [FromBody]AuthorResource authorResource){
             try
             {
@@ -66,7 +75,10 @@ namespace Biblioteca.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPost("/remove/{id}")]
+        ///Metodo get para eliminar un autor en base de datos
+        ///Recibe el id del autor
+        ///Devuelve resultado con respuesta del proceso ejecutado
+        [HttpGet("remove/{id}")]
         public async Task<IActionResult> RemoveAuthor(int id){
             try
             {
@@ -75,6 +87,7 @@ namespace Biblioteca.Controllers
                     return NotFound();
 
                 authorsRepository.RemoveAuthorAsync(author);
+                await unitOfWork.CompleteAsync();
                 return Ok();
             }
             catch (System.Exception ex)
