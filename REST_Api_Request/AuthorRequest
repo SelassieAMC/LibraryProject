@@ -1,0 +1,27 @@
+### Adding author
+POST https://localhost:5001/api/authors HTTP/1.1
+content-type: application/json
+
+{
+    "Name":"name_req1",
+    "LastName":"last_name_req1",
+    "BirthDay":"11/08/1990"
+}
+
+###Updating author
+PUT https://localhost:5001/api/authors/update/9 HTTP/1.1
+content-type: application/json
+
+{
+    "Id":9,
+    "Name":"name_req4",
+    "LastName":"last_name_req4",
+    "BirthDay":"08/08/1992"
+}
+
+###Removing author
+DELETE https://localhost:5001/api/authors/remove/3 HTTP/1.1
+
+
+###Get Authors with paginf
+GET https://localhost:5001/api/authors?Page=1&PageSize=2 HTTP/1.1

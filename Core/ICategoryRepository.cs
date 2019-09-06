@@ -8,7 +8,7 @@ namespace Biblioteca.Core
     {
         void AddCategoryAsync(Category category);
         void RemoveCategoryAsync(Category category);
-        Task<Category> GetCategoryByIdAsync(int categoryId, bool includeRelatedObjects = true);
-        Task<IEnumerable<Category>> GetCategoriesAsync(GenericQuery query);
+        Task<Category> GetCategoryByIdAsync(int categoryId);
+        Task<QueryResult<Category>> GetCategoriesAsync(GenericQuery query);
     }
 }

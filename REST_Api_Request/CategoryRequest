@@ -1,0 +1,24 @@
+### Adding category
+POST https://localhost:5001/api/categories HTTP/1.1
+content-type: application/json
+
+{
+    "Name":"category_req1"
+}
+
+###Updating category
+PUT https://localhost:5001/api/categories/update/1008 HTTP/1.1
+content-type: application/json
+
+{
+    "Id":1008,
+    "Name":"category_req1",
+    "Description":"this is an update"
+}
+
+###Removing category
+DELETE https://localhost:5001/api/categories/remove/1008 HTTP/1.1
+
+
+###Get categories with paginf
+GET https://localhost:5001/api/categories?Page=1&PageSize=2 HTTP/1.1

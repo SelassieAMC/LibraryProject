@@ -48,10 +48,10 @@ namespace Biblioteca.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        ///Metodo post para actualizar un autor en base de datos, 
+        ///Metodo put para actualizar un autor en base de datos, 
         ///Recibe el id del autor y un objecto authorResource en formato JSON
         ///Devuelve resultado con respuesta del proceso ejecutado
-        [HttpPost("update/{authorId}")]
+        [HttpPut("update/{authorId}")]
         public async Task<IActionResult> UpdateAuthor(int authorId, [FromBody]AuthorResource authorResource){
             try
             {
@@ -75,11 +75,11 @@ namespace Biblioteca.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        ///Metodo get para eliminar un autor en base de datos
+        ///Metodo delete para eliminar un autor en base de datos
         ///Recibe el id del autor
         ///Devuelve resultado con respuesta del proceso ejecutado
-        [HttpGet("remove/{id}")]
-        public async Task<IActionResult> RemoveAuthor(int id){
+        [HttpDelete("remove/{id}")]
+        public async Task<IActionResult> RemoveAuthorByIdAsync(int id){
             try
             {
                 var author = await authorsRepository.GetAuthorByIdAsync(id);
@@ -89,6 +89,21 @@ namespace Biblioteca.Controllers
                 authorsRepository.RemoveAuthorAsync(author);
                 await unitOfWork.CompleteAsync();
                 return Ok();
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        ///Metodo get para obtener los autores de base de datos de acuerdo a paginado y cantidad de registros
+        ///Recibe GenericQuery con pagina  y cantidad a devolver
+        ///Devuelve lista de autores que cumplan las condiciones de GenericQuery
+        [HttpGet]
+        public async Task<IActionResult> GetAuthors(GenericQuery query){
+            try
+            {
+                var authors = await authorsRepository.GetAuthorsAsync(query);
+                return Ok(authors);
             }
             catch (System.Exception ex)
             {

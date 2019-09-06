@@ -22,6 +22,6 @@ namespace Biblioteca.Core.Models
         [StringLength(255)]
         public string Description { get; set; }
         public ICollection<BookCategory> BookCategories { get; set; }
-        public DateTime LastUpdate{ get; set; }
+        public DateTime? LastUpdate{ get; set; }
     }
 }

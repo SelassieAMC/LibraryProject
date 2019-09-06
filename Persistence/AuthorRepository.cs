@@ -29,7 +29,7 @@ namespace Biblioteca.Persistence
         {
             var result = new QueryResult<Author>();
             
-            var dataQuery = context.Authors.AsQueryable();
+            var dataQuery = context.Authors.OrderBy(A => A.Id).AsQueryable();
             dataQuery = dataQuery.ApplyPaging(query);
             
             result.TotalItems = await dataQuery.CountAsync();
