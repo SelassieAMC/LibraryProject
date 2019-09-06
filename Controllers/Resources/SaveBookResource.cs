@@ -6,16 +6,11 @@ using Biblioteca.Core.Models;
 
 namespace Biblioteca.Controllers.Resources
 {
-    public class BookResource : KeyValuePair
+    public class SaveBookResource : KeyValuePair
     {
-        public BookResource()
-        {
-            this.BookCategories = new Collection<BookCategoryResource>();
-        }
         public int AuthorId { get; set; }
-        public ICollection<BookCategoryResource> BookCategories { get; set; }
+        public ICollection<int> BookCategories { get; set; }
         [Required]
         public string ISBN { get; set; }
-        public DateTime? LastUpdate { get; set; }
     }
 }

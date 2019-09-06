@@ -103,7 +103,7 @@ namespace Biblioteca.Controllers
             try
             {
                 var authors = await authorsRepository.GetAuthorsAsync(query);
-                return Ok(authors);
+                return Ok (mapper.Map<QueryResult<Author>,QueryResultResource<AuthorResource>>(authors));
             }
             catch (System.Exception ex)
             {

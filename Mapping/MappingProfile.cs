@@ -10,6 +10,8 @@ namespace Biblioteca.Mapping
             //Domain model to API Resource
             CreateMap<Author, AuthorResource>();
             CreateMap<Category,CategoryResource>();
+            CreateMap<QueryResult<Category>,QueryResultResource<CategoryResource>>();
+            CreateMap<QueryResult<Author>,QueryResultResource<AuthorResource>>();
             
             //API Resource to Domain Model
             CreateMap<AuthorResource,Author>();

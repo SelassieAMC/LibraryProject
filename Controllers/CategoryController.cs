@@ -103,7 +103,7 @@ namespace Biblioteca.Controllers
             try
             {
                 var categories = await categoriesRepository.GetCategoriesAsync(query);
-                return Ok(categories);
+                return Ok(mapper.Map<QueryResult<Category>,QueryResultResource<CategoryResource>>(categories));
             }
             catch (System.Exception ex)
             {

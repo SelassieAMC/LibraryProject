@@ -9,6 +9,6 @@ namespace Biblioteca.Core
         void AddBookAsync(Book book);
         void RemoveBookAsync(Book book);
         Task<Book> GetBookByIdAsync(int bookId, bool includeRelatedObjects = true);
-        Task<IEnumerable<Book>> GetBooksAsync(BookQuery query);
+        Task<QueryResult<Book>> GetBooksAsync(BookQuery query);
     }
 }

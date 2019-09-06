@@ -9,6 +9,5 @@ namespace Biblioteca.Controllers.Resources
     {
         [StringLength(255)]
         public string Description { get; set; }
-        public DateTime LastUpdate{ get; set; }
     }
 }
