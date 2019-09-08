@@ -1,0 +1,22 @@
+<h2>Authors</h2>
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th *ngFor="let c of columns">
+          <div>
+            {{ c.title }}
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of queryResult.items">
+        <td>{{ a.name }}</td>
+        <td>{{ a.lastName }}</td>
+        <td>{{ a.birthDay }}</td>
+        <td>
+          <a [routerLink]="['/Author/', a.id]">Details</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
