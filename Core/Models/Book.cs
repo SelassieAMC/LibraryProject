@@ -11,14 +11,14 @@ namespace Biblioteca.Core.Models
     {
         public Book()
         {
-            this.BookCategories = new Collection<BookCategory>();
+            this.Categories = new Collection<BookCategory>();
         }
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
         public Author Author { get; set; }
         public int AuthorId { get; set; }
-        public ICollection<BookCategory> BookCategories { get; set; }
+        public ICollection<BookCategory> Categories { get; set; }
         public string ISBN { get; set; }
         public DateTime? LastUpdate { get; set; }
     }

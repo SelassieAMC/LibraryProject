@@ -1,0 +1,822 @@
+INFO  07-17-2019 23:17:39 Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager [1] - User profile is available. Using 'C:\Users\andcl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+INFO  07-17-2019 23:17:42 Microsoft.AspNetCore.SpaServices [1] - Starting @angular/cli on port 52307... 
+INFO  07-17-2019 23:17:51 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/   
+ERROR 07-18-2019 23:18:42 Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware [7] - An unhandled exception has occurred while executing the request. System.TimeoutException: The Angular CLI process did not start listening for requests within the timeout period of 50 seconds. Check the log output for error information.
+   at Microsoft.AspNetCore.SpaServices.Extensions.Util.TaskTimeoutExtensions.WithTimeout[T](Task`1 task, TimeSpan timeoutDelay, String message)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+INFO  07-18-2019 23:18:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [7] - Request finished in 51910.0331ms 500 text/html; charset=utf-8 
+INFO  07-18-2019 23:18:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [7] - Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico   
+INFO  07-18-2019 23:18:43 Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [7] - Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\andcl\Documents\Programación\Proyectos\dotnet_core\LibraryProject\LibraryProject\wwwroot\favicon.ico' 
+INFO  07-18-2019 23:18:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [7] - Request finished in 48.4626ms 200 image/x-icon 
+INFO  07-19-2019 23:19:51 Microsoft.AspNetCore.SpaServices [6] - > Biblioteca@0.0.0 start C:\Users\andcl\Documents\Programación\Proyectos\dotnet_core\LibraryProject\LibraryProject\ClientApp
+> ng serve "--port" "52307"
+
+** Angular Live Development Server is listening on localhost:52307, open your browser on http://localhost:52307/ **
+ 
+INFO  07-19-2019 23:19:52 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/   
+INFO  07-20-2019 23:20:18 Microsoft.AspNetCore.SpaServices [10] - i ｢wdm｣: wait until bundle finished: /
+ 
+INFO  07-20-2019 23:20:31 Microsoft.AspNetCore.SpaServices [6] - Date: 2019-09-08T04:20:31.514Z
+Hash: 9856ea5d377214738cd4
+Time: 38337ms
+chunk {main} main.js, main.js.map (main) 27.3 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 223 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.css, styles.css.map (styles) 139 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 4.12 MB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+ 
+INFO  07-20-2019 23:20:31 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 39117.453ms 200 text/html; charset=UTF-8 
+INFO  07-20-2019 23:20:31 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/styles.css   
+INFO  07-20-2019 23:20:31 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/main.js   
+INFO  07-20-2019 23:20:32 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 GET https://localhost:5001/runtime.js   
+INFO  07-20-2019 23:20:32 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 GET https://localhost:5001/polyfills.js   
+INFO  07-20-2019 23:20:32 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 391.4398ms 200 text/css; charset=UTF-8 
+INFO  07-20-2019 23:20:32 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 GET https://localhost:5001/vendor.js   
+INFO  07-20-2019 23:20:32 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 22.5446ms 304  
+INFO  07-20-2019 23:20:33 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 1158.742ms 200 application/javascript; charset=UTF-8 
+INFO  07-20-2019 23:20:33 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 1230.9789ms 200 application/javascript; charset=UTF-8 
+INFO  07-20-2019 23:20:33 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 1070.0959ms 200 application/javascript; charset=UTF-8 
+INFO  07-20-2019 23:20:34 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico   
+INFO  07-20-2019 23:20:34 Microsoft.AspNetCore.Server.Kestrel [10] - Connection id "0HLPK2E1JMFFO", Request id "0HLPK2E1JMFFO:00000002": the application aborted the connection. 
+INFO  07-20-2019 23:20:34 Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [10] - Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\andcl\Documents\Programación\Proyectos\dotnet_core\LibraryProject\LibraryProject\wwwroot\favicon.ico' 
+INFO  07-20-2019 23:20:34 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 107.5485ms 0 image/x-icon 
+INFO  07-20-2019 23:20:35 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916435055   
+INFO  07-20-2019 23:20:35 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 180.3884ms 200 application/json; charset=UTF-8 
+INFO  07-20-2019 23:20:35 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/936/oe3bxpwk/websocket   
+INFO  07-20-2019 23:20:37 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/936/k5of415y/xhr_streaming?t=1567916437021  0 
+INFO  07-20-2019 23:20:37 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 61.0265ms 200 application/javascript; charset=UTF-8 
+INFO  07-20-2019 23:20:37 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 1867.1566ms 101  
+INFO  07-20-2019 23:20:38 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916438183   
+INFO  07-20-2019 23:20:38 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 4.4394ms 200 application/json; charset=UTF-8 
+INFO  07-20-2019 23:20:38 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/562/cjas5e0a/websocket   
+INFO  07-20-2019 23:20:38 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/562/gm0jwzqv/xhr_streaming?t=1567916438826  0 
+INFO  07-20-2019 23:20:38 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 10.1142ms 200 application/javascript; charset=UTF-8 
+INFO  07-20-2019 23:20:39 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 1064.8325ms 101  
+INFO  07-20-2019 23:20:39 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916439884   
+INFO  07-20-2019 23:20:39 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 3.6294ms 200 application/json; charset=UTF-8 
+INFO  07-20-2019 23:20:39 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/552/53sfhca4/websocket   
+INFO  07-20-2019 23:20:40 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/552/2zizulnq/xhr_streaming?t=1567916440522  0 
+INFO  07-20-2019 23:20:40 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 6.9978ms 200 application/javascript; charset=UTF-8 
+INFO  07-20-2019 23:20:40 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 1014.784ms 101  
+INFO  07-20-2019 23:20:41 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916441575   
+INFO  07-20-2019 23:20:41 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 8.229ms 200 application/json; charset=UTF-8 
+INFO  07-20-2019 23:20:41 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/173/1d1bfyta/websocket   
+INFO  07-20-2019 23:20:42 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/173/tpjri1bu/xhr_streaming?t=1567916442233  0 
+INFO  07-20-2019 23:20:42 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 4.0515ms 200 application/javascript; charset=UTF-8 
+INFO  07-20-2019 23:20:42 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 1040.9581ms 101  
+INFO  07-20-2019 23:20:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916443309   
+INFO  07-20-2019 23:20:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 4.7268ms 200 application/json; charset=UTF-8 
+INFO  07-20-2019 23:20:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/093/21mmtxte/websocket   
+INFO  07-20-2019 23:20:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/093/vtmrnemo/xhr_streaming?t=1567916443956  0 
+INFO  07-20-2019 23:20:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 5.3976ms 200 application/javascript; charset=UTF-8 
+INFO  07-20-2019 23:20:44 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 1036.0937ms 101  
+INFO  07-20-2019 23:20:45 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916445073   
+INFO  07-20-2019 23:20:45 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 3.9558ms 200 application/json; charset=UTF-8 
+INFO  07-20-2019 23:20:45 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/656/ctylnz0q/websocket   
+INFO  07-20-2019 23:20:45 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/656/xdxsbcip/xhr_streaming?t=1567916445725  0 
+INFO  07-20-2019 23:20:45 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 4.6168ms 200 application/javascript; charset=UTF-8 
+INFO  07-20-2019 23:20:46 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 1121.6933ms 101  
+INFO  07-20-2019 23:20:46 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916446802   
+INFO  07-20-2019 23:20:46 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 6.0085ms 200 application/json; charset=UTF-8 
+INFO  07-20-2019 23:20:46 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/633/vjnwpie5/websocket   
+INFO  07-20-2019 23:20:47 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/633/jrncq4ce/xhr_streaming?t=1567916447447  0 
+INFO  07-20-2019 23:20:47 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 4.5921ms 200 application/javascript; charset=UTF-8 
+INFO  07-20-2019 23:20:47 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 1148.6454ms 101  
+INFO  07-20-2019 23:20:48 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916448479   
+INFO  07-20-2019 23:20:48 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 3.496ms 200 application/json; charset=UTF-8 
+INFO  07-20-2019 23:20:48 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/417/hx52thls/websocket   
+INFO  07-20-2019 23:20:49 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/417/b1mo4urx/xhr_streaming?t=1567916449123  0 
+INFO  07-20-2019 23:20:49 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 6.1505ms 200 application/javascript; charset=UTF-8 
+INFO  07-20-2019 23:20:49 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1109.7613ms 101  
+INFO  07-20-2019 23:20:50 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916450198   
+INFO  07-20-2019 23:20:50 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 5.4362ms 200 application/json; charset=UTF-8 
+INFO  07-20-2019 23:20:50 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/264/ioht1uzr/websocket   
+INFO  07-20-2019 23:20:50 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/264/ztth4ran/xhr_streaming?t=1567916450856  0 
+INFO  07-20-2019 23:20:50 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request finished in 5.6066ms 200 application/javascript; charset=UTF-8 
+INFO  07-20-2019 23:20:51 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1130.3555ms 101  
+INFO  07-20-2019 23:20:51 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916451963   
+INFO  07-20-2019 23:20:51 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 3.5896ms 200 application/json; charset=UTF-8 
+INFO  07-20-2019 23:20:51 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/674/ryvibuww/websocket   
+INFO  07-20-2019 23:20:52 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/674/awou1kw3/xhr_streaming?t=1567916452601  0 
+INFO  07-20-2019 23:20:52 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request finished in 4.2535ms 200 application/javascript; charset=UTF-8 
+INFO  07-20-2019 23:20:53 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1109.8261ms 101  
+INFO  07-20-2019 23:20:53 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916453679   
+INFO  07-20-2019 23:20:53 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 4.8647ms 200 application/json; charset=UTF-8 
+INFO  07-20-2019 23:20:53 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/028/assictrz/websocket   
+INFO  07-20-2019 23:20:54 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/028/tqdqyup4/xhr_streaming?t=1567916454317  0 
+INFO  07-20-2019 23:20:54 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 4.5544ms 200 application/javascript; charset=UTF-8 
+INFO  07-20-2019 23:20:54 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 1116.074ms 101  
+INFO  07-20-2019 23:20:55 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916455382   
+INFO  07-20-2019 23:20:55 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 3.6438ms 200 application/json; charset=UTF-8 
+INFO  07-20-2019 23:20:55 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/253/raegfz1p/websocket   
+INFO  07-20-2019 23:20:56 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/253/lljzeeex/xhr_streaming?t=1567916456017  0 
+INFO  07-20-2019 23:20:56 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 4.0683ms 200 application/javascript; charset=UTF-8 
+INFO  07-20-2019 23:20:56 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 1119.5417ms 101  
+INFO  07-20-2019 23:20:57 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916457034   
+INFO  07-20-2019 23:20:57 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 3.7608ms 200 application/json; charset=UTF-8 
+INFO  07-20-2019 23:20:57 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/975/k2jryitf/websocket   
+INFO  07-20-2019 23:20:57 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/975/ywystlbi/xhr_streaming?t=1567916457668  0 
+INFO  07-20-2019 23:20:57 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 5.6337ms 200 application/javascript; charset=UTF-8 
+INFO  07-20-2019 23:20:58 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 1124.9111ms 101  
+INFO  07-20-2019 23:20:58 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916458758   
+INFO  07-20-2019 23:20:58 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request finished in 9.0291ms 200 application/json; charset=UTF-8 
+INFO  07-20-2019 23:20:58 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/612/h3ehoy35/websocket   
+INFO  07-20-2019 23:20:59 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/612/ufg100yw/xhr_streaming?t=1567916459417  0 
+INFO  07-20-2019 23:20:59 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request finished in 4.517ms 200 application/javascript; charset=UTF-8 
+INFO  07-20-2019 23:20:59 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 1115.4648ms 101  
+INFO  07-21-2019 23:21:00 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916460442   
+INFO  07-21-2019 23:21:00 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 3.7214ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:00 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/567/4dyaklvr/websocket   
+INFO  07-21-2019 23:21:01 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/567/t0kkuwvr/xhr_streaming?t=1567916461074  0 
+INFO  07-21-2019 23:21:01 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 5.3221ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:01 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 1121.89ms 101  
+INFO  07-21-2019 23:21:02 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916462171   
+INFO  07-21-2019 23:21:02 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 4.6804ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:02 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/946/uaq1njfp/websocket   
+INFO  07-21-2019 23:21:02 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/946/yqq0eqo2/xhr_streaming?t=1567916462809  0 
+INFO  07-21-2019 23:21:02 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request finished in 4.6734ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:03 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 1133.3085ms 101  
+INFO  07-21-2019 23:21:03 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916463920   
+INFO  07-21-2019 23:21:03 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 4.6882ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:03 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/582/0c4hyk0a/websocket   
+INFO  07-21-2019 23:21:04 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/582/cg0igysy/xhr_streaming?t=1567916464559  0 
+INFO  07-21-2019 23:21:04 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 5.2609ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:05 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 1121.4753ms 101  
+INFO  07-21-2019 23:21:05 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916465670   
+INFO  07-21-2019 23:21:05 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 4.9107ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:05 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/678/u1q44fep/websocket   
+INFO  07-21-2019 23:21:06 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/678/mlgigitw/xhr_streaming?t=1567916466312  0 
+INFO  07-21-2019 23:21:06 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 7.1904ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:06 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1117.6377ms 101  
+INFO  07-21-2019 23:21:07 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916467356   
+INFO  07-21-2019 23:21:07 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 3.7588ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:07 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/076/tvqs53i5/websocket   
+INFO  07-21-2019 23:21:08 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/076/toekdfcn/xhr_streaming?t=1567916468002  0 
+INFO  07-21-2019 23:21:08 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 15.9388ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:08 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 1128.4441ms 101  
+INFO  07-21-2019 23:21:09 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916469078   
+INFO  07-21-2019 23:21:09 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 3.7386ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:09 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/360/hn30d2u4/websocket   
+INFO  07-21-2019 23:21:09 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/360/acnjobl1/xhr_streaming?t=1567916469713  0 
+INFO  07-21-2019 23:21:09 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 4.1303ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:10 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 1111.3591ms 101  
+INFO  07-21-2019 23:21:10 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916470779   
+INFO  07-21-2019 23:21:10 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 14.1554ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:10 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/124/amma3vo2/websocket   
+INFO  07-21-2019 23:21:11 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/124/wzyissag/xhr_streaming?t=1567916471443  0 
+INFO  07-21-2019 23:21:11 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request finished in 5.3964ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:11 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1117.696ms 101  
+INFO  07-21-2019 23:21:12 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916472469   
+INFO  07-21-2019 23:21:12 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 3.6877ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:12 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/132/2qlmelc2/websocket   
+INFO  07-21-2019 23:21:13 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/132/ncvovq4e/xhr_streaming?t=1567916473113  0 
+INFO  07-21-2019 23:21:13 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 4.5371ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:13 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1132.0128ms 101  
+INFO  07-21-2019 23:21:14 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916474178   
+INFO  07-21-2019 23:21:14 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 6.6817ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:14 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/831/p2trr15y/websocket   
+INFO  07-21-2019 23:21:14 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/831/clhgz23d/xhr_streaming?t=1567916474839  0 
+INFO  07-21-2019 23:21:14 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 4.4891ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:15 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 1135.0048ms 101  
+INFO  07-21-2019 23:21:15 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916475908   
+INFO  07-21-2019 23:21:15 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 4.3856ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:15 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/407/5ofucbxz/websocket   
+INFO  07-21-2019 23:21:16 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/407/thsjuvzg/xhr_streaming?t=1567916476557  0 
+INFO  07-21-2019 23:21:16 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 4.1233ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:17 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 1132.0485ms 101  
+INFO  07-21-2019 23:21:17 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916477624   
+INFO  07-21-2019 23:21:17 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 11.7452ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:17 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/819/mom3dbrk/websocket   
+INFO  07-21-2019 23:21:18 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/819/jjwwtxy5/xhr_streaming?t=1567916478298  0 
+INFO  07-21-2019 23:21:18 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 8.0114ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:18 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 1128.261ms 101  
+INFO  07-21-2019 23:21:19 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916479372   
+INFO  07-21-2019 23:21:19 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 5.74ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:19 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/355/ahweghci/websocket   
+INFO  07-21-2019 23:21:20 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/355/m1vmpdsg/xhr_streaming?t=1567916480013  0 
+INFO  07-21-2019 23:21:20 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 4.2654ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:20 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1169.6215ms 101  
+INFO  07-21-2019 23:21:21 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916481027   
+INFO  07-21-2019 23:21:21 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 6.0783ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:21 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/146/abl4izwm/websocket   
+INFO  07-21-2019 23:21:21 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/146/x0hl0gxg/xhr_streaming?t=1567916481669  0 
+INFO  07-21-2019 23:21:21 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request finished in 54.1263ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:22 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request finished in 1144.5943ms 101  
+INFO  07-21-2019 23:21:22 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916482802   
+INFO  07-21-2019 23:21:22 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 7.777ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:22 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/959/v2wk4ctx/websocket   
+INFO  07-21-2019 23:21:23 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/959/ljyg0szk/xhr_streaming?t=1567916483622  0 
+INFO  07-21-2019 23:21:23 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request finished in 4.487ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:24 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request finished in 1180.3265ms 101  
+INFO  07-21-2019 23:21:24 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916484717   
+INFO  07-21-2019 23:21:24 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 3.689ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:24 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/008/byklbbvo/websocket   
+INFO  07-21-2019 23:21:25 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/008/cmq4rram/xhr_streaming?t=1567916485350  0 
+INFO  07-21-2019 23:21:25 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 5.5339ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:25 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1110.8537ms 101  
+INFO  07-21-2019 23:21:26 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916486444   
+INFO  07-21-2019 23:21:26 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 3.567ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:26 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/954/n3guer4w/websocket   
+INFO  07-21-2019 23:21:27 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/954/mvgrpghj/xhr_streaming?t=1567916487087  0 
+INFO  07-21-2019 23:21:27 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 4.7633ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:27 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1119.0528ms 101  
+INFO  07-21-2019 23:21:28 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916488126   
+INFO  07-21-2019 23:21:28 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 4.5613ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:28 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/244/igg25l53/websocket   
+INFO  07-21-2019 23:21:28 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/244/4qcr1dkl/xhr_streaming?t=1567916488775  0 
+INFO  07-21-2019 23:21:28 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 4.4636ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:29 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 1139.9898ms 101  
+INFO  07-21-2019 23:21:29 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916489793   
+INFO  07-21-2019 23:21:29 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 3.7419ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:29 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/162/ul1iagts/websocket   
+INFO  07-21-2019 23:21:30 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/162/2ehlhdjx/xhr_streaming?t=1567916490456  0 
+INFO  07-21-2019 23:21:30 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 22.8927ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:30 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 1113.5767ms 101  
+INFO  07-21-2019 23:21:31 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916491540   
+INFO  07-21-2019 23:21:31 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 4.2021ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:31 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/131/gwdrn1yw/websocket   
+INFO  07-21-2019 23:21:32 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/131/ap110uti/xhr_streaming?t=1567916492181  0 
+INFO  07-21-2019 23:21:32 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 4.3951ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:32 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1148.6947ms 101  
+INFO  07-21-2019 23:21:33 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916493226   
+INFO  07-21-2019 23:21:33 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 3.8191ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:33 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/727/qfw0epaf/websocket   
+INFO  07-21-2019 23:21:33 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/727/pza00fup/xhr_streaming?t=1567916493867  0 
+INFO  07-21-2019 23:21:33 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 4.003ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:34 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1125.2966ms 101  
+INFO  07-21-2019 23:21:34 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916494951   
+INFO  07-21-2019 23:21:34 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 3.9685ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:34 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/273/ebtytdba/websocket   
+INFO  07-21-2019 23:21:35 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/273/cnb3rfe1/xhr_streaming?t=1567916495582  0 
+INFO  07-21-2019 23:21:35 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 7.1075ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:36 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1130.7956ms 101  
+INFO  07-21-2019 23:21:36 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916496606   
+INFO  07-21-2019 23:21:36 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 3.8088ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:36 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/741/xcgwyrkw/websocket   
+INFO  07-21-2019 23:21:37 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/741/0sctrtgy/xhr_streaming?t=1567916497238  0 
+INFO  07-21-2019 23:21:37 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 4.7793ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:37 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 1111.4334ms 101  
+INFO  07-21-2019 23:21:38 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916498341   
+INFO  07-21-2019 23:21:38 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 6.0717ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:38 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/571/1pp4xwai/websocket   
+INFO  07-21-2019 23:21:38 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/571/eh5ystxr/xhr_streaming?t=1567916498978  0 
+INFO  07-21-2019 23:21:38 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 4.5129ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:39 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 1123.0481ms 101  
+INFO  07-21-2019 23:21:40 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916500025   
+INFO  07-21-2019 23:21:40 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 3.7584ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:40 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/251/1ijifpyk/websocket   
+INFO  07-21-2019 23:21:40 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/251/xox0h554/xhr_streaming?t=1567916500664  0 
+INFO  07-21-2019 23:21:40 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 6.6969ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:41 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request finished in 1113.8391ms 101  
+INFO  07-21-2019 23:21:41 Microsoft.AspNetCore.Hosting.Internal.WebHost [31] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916501700   
+INFO  07-21-2019 23:21:41 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 4.1582ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:41 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/595/mhhlcbie/websocket   
+INFO  07-21-2019 23:21:42 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/595/slnmrs4v/xhr_streaming?t=1567916502353  0 
+INFO  07-21-2019 23:21:42 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 7.2093ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:42 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 1119.2741ms 101  
+INFO  07-21-2019 23:21:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916503437   
+INFO  07-21-2019 23:21:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 3.6475ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/194/pxt1sgg1/websocket   
+INFO  07-21-2019 23:21:44 Microsoft.AspNetCore.Hosting.Internal.WebHost [31] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/194/az0zrnhk/xhr_streaming?t=1567916504073  0 
+INFO  07-21-2019 23:21:44 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 5.3196ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:44 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 1111.4215ms 101  
+INFO  07-21-2019 23:21:45 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916505132   
+INFO  07-21-2019 23:21:45 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 4.1274ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:45 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/027/bncdvnqj/websocket   
+INFO  07-21-2019 23:21:45 Microsoft.AspNetCore.Hosting.Internal.WebHost [31] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/027/ln15qrpa/xhr_streaming?t=1567916505775  0 
+INFO  07-21-2019 23:21:45 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 7.9671ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:46 Microsoft.AspNetCore.Hosting.Internal.WebHost [31] - Request finished in 1127.8895ms 101  
+INFO  07-21-2019 23:21:46 Microsoft.AspNetCore.Hosting.Internal.WebHost [31] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916506881   
+INFO  07-21-2019 23:21:46 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 8.8202ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:46 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/940/hxcptyi5/websocket   
+INFO  07-21-2019 23:21:47 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/940/0b0tm5lu/xhr_streaming?t=1567916507538  0 
+INFO  07-21-2019 23:21:47 Microsoft.AspNetCore.Hosting.Internal.WebHost [31] - Request finished in 9.9672ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:48 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1132.7846ms 101  
+INFO  07-21-2019 23:21:48 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916508584   
+INFO  07-21-2019 23:21:48 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 3.4188ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:48 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/916/p5vmfnsu/websocket   
+INFO  07-21-2019 23:21:49 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/916/4psdd4dr/xhr_streaming?t=1567916509222  0 
+INFO  07-21-2019 23:21:49 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 3.9328ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:49 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 1123.2677ms 101  
+INFO  07-21-2019 23:21:50 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916510277   
+INFO  07-21-2019 23:21:50 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 3.8347ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:50 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/446/dp3kvwnj/websocket   
+INFO  07-21-2019 23:21:50 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/446/d5rp20sf/xhr_streaming?t=1567916510919  0 
+INFO  07-21-2019 23:21:50 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 4.0141ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:51 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1127.1727ms 101  
+INFO  07-21-2019 23:21:52 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916512039   
+INFO  07-21-2019 23:21:52 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 3.9439ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:52 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/598/qk3uwq4r/websocket   
+INFO  07-21-2019 23:21:52 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/598/js0uhzp0/xhr_streaming?t=1567916512692  0 
+INFO  07-21-2019 23:21:52 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 4.2177ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:53 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 1113.3982ms 101  
+INFO  07-21-2019 23:21:53 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916513793   
+INFO  07-21-2019 23:21:53 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 3.9685ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:53 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/194/pkzppakr/websocket   
+INFO  07-21-2019 23:21:54 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/194/j0tgqalq/xhr_streaming?t=1567916514429  0 
+INFO  07-21-2019 23:21:54 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 4.9374ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:54 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 1112.7421ms 101  
+INFO  07-21-2019 23:21:55 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916515489   
+INFO  07-21-2019 23:21:55 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 3.2415ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:55 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/841/hcli2inm/websocket   
+INFO  07-21-2019 23:21:56 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/841/ddf3tg4o/xhr_streaming?t=1567916516120  0 
+INFO  07-21-2019 23:21:56 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 5.5011ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:56 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 1126.2424ms 101  
+INFO  07-21-2019 23:21:57 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916517142   
+INFO  07-21-2019 23:21:57 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 30.6899ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:57 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/990/dqd4jeyv/websocket   
+INFO  07-21-2019 23:21:57 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/990/i3o1vp1m/xhr_streaming?t=1567916517865  0 
+INFO  07-21-2019 23:21:57 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 4.9304ms 200 application/javascript; charset=UTF-8 
+INFO  07-21-2019 23:21:58 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 1113.0431ms 101  
+INFO  07-21-2019 23:21:58 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916518946   
+INFO  07-21-2019 23:21:58 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 3.3634ms 200 application/json; charset=UTF-8 
+INFO  07-21-2019 23:21:58 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/668/yd4koefd/websocket   
+INFO  07-21-2019 23:21:59 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/668/0arqwpfz/xhr_streaming?t=1567916519578  0 
+INFO  07-21-2019 23:21:59 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 3.8462ms 200 application/javascript; charset=UTF-8 
+INFO  07-22-2019 23:22:00 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 1116.2185ms 101  
+INFO  07-22-2019 23:22:00 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916520632   
+INFO  07-22-2019 23:22:00 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 4.8224ms 200 application/json; charset=UTF-8 
+INFO  07-22-2019 23:22:00 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/614/11dadolj/websocket   
+INFO  07-22-2019 23:22:01 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/614/njuqyemz/xhr_streaming?t=1567916521277  0 
+INFO  07-22-2019 23:22:01 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 6.2778ms 200 application/javascript; charset=UTF-8 
+INFO  07-22-2019 23:22:01 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1120.0878ms 101  
+INFO  07-22-2019 23:22:02 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916522377   
+INFO  07-22-2019 23:22:02 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 4.0424ms 200 application/json; charset=UTF-8 
+INFO  07-22-2019 23:22:02 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/800/43l2icr1/websocket   
+INFO  07-22-2019 23:22:03 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/800/szxdaqtj/xhr_streaming?t=1567916523020  0 
+INFO  07-22-2019 23:22:03 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 5.3857ms 200 application/javascript; charset=UTF-8 
+INFO  07-22-2019 23:22:03 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1139.9853ms 101  
+INFO  07-22-2019 23:22:04 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916524076   
+INFO  07-22-2019 23:22:04 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 3.6557ms 200 application/json; charset=UTF-8 
+INFO  07-22-2019 23:22:04 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/018/qd4o4fku/websocket   
+INFO  07-22-2019 23:22:04 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/018/4uuq40rz/xhr_streaming?t=1567916524774  0 
+INFO  07-22-2019 23:22:04 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 8.7483ms 200 application/javascript; charset=UTF-8 
+INFO  07-22-2019 23:22:05 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 1131.8104ms 101  
+INFO  07-22-2019 23:22:05 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916525879   
+INFO  07-22-2019 23:22:05 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 4.9448ms 200 application/json; charset=UTF-8 
+INFO  07-22-2019 23:22:05 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/598/5wd1utbv/websocket   
+INFO  07-22-2019 23:22:06 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/598/tvfncpg0/xhr_streaming?t=1567916526547  0 
+INFO  07-22-2019 23:22:06 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 4.0116ms 200 application/javascript; charset=UTF-8 
+INFO  07-22-2019 23:22:07 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 1145.6576ms 101  
+INFO  07-22-2019 23:22:07 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916527622   
+INFO  07-22-2019 23:22:07 Microsoft.AspNetCore.Hosting.Internal.WebHost [33] - Request finished in 3.457ms 200 application/json; charset=UTF-8 
+INFO  07-22-2019 23:22:07 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/173/tdjm5jta/websocket   
+INFO  07-22-2019 23:22:08 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/173/d54fhycy/xhr_streaming?t=1567916528265  0 
+INFO  07-22-2019 23:22:08 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 8.0968ms 200 application/javascript; charset=UTF-8 
+INFO  07-22-2019 23:22:08 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request finished in 1143.5348ms 101  
+INFO  07-22-2019 23:22:08 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 GET https://localhost:5001/api/authors   
+INFO  07-22-2019 23:22:08 Microsoft.AspNetCore.Routing.EndpointMiddleware [32] - Executing endpoint 'Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca)' 
+INFO  07-22-2019 23:22:09 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [32] - Route matched with {action = "GetAuthors", controller = "Author", page = ""}. Executing action Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) 
+INFO  07-22-2019 23:22:09 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916529341   
+INFO  07-22-2019 23:22:09 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 3.9336ms 200 application/json; charset=UTF-8 
+INFO  07-22-2019 23:22:09 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/912/i02s2no2/websocket   
+INFO  07-22-2019 23:22:10 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/912/os32hymj/xhr_streaming?t=1567916529980  0 
+INFO  07-22-2019 23:22:10 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 5.9108ms 200 application/javascript; charset=UTF-8 
+INFO  07-22-2019 23:22:10 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1129.3037ms 101  
+INFO  07-22-2019 23:22:11 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916531090   
+INFO  07-22-2019 23:22:11 Microsoft.AspNetCore.Hosting.Internal.WebHost [25] - Request finished in 12.1656ms 200 application/json; charset=UTF-8 
+INFO  07-22-2019 23:22:11 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/209/bxtvnxmj/websocket   
+INFO  07-22-2019 23:22:12 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [32] - Executing action method Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) with arguments (Biblioteca.Core.Models.GenericQuery) - Validation state: Valid 
+INFO  07-22-2019 23:22:13 Microsoft.EntityFrameworkCore.Infrastructure [32] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  07-22-2019 23:22:40 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 28928.007ms 101  
+INFO  07-22-2019 23:22:41 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 GET https://localhost:5001/   
+INFO  07-22-2019 23:22:41 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916561727   
+INFO  07-22-2019 23:22:42 Microsoft.AspNetCore.Hosting.Internal.WebHost [13] - Request finished in 1020.7559ms 304  
+INFO  07-22-2019 23:22:42 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request finished in 492.4852ms 0  
+INFO  07-22-2019 23:22:42 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 GET https://localhost:5001/runtime.js   
+INFO  07-22-2019 23:22:42 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/polyfills.js   
+INFO  07-22-2019 23:22:42 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 28.4386ms 304  
+INFO  07-22-2019 23:22:42 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 12.4078ms 304  
+INFO  07-22-2019 23:22:42 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 GET https://localhost:5001/main.js   
+INFO  07-22-2019 23:22:42 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/vendor.js   
+INFO  07-22-2019 23:22:42 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 10.4717ms 304  
+INFO  07-22-2019 23:22:42 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/styles.css   
+INFO  07-22-2019 23:22:42 Microsoft.AspNetCore.Hosting.Internal.WebHost [13] - Request finished in 20.352ms 304  
+INFO  07-22-2019 23:22:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request finished in 1100.5194ms 200 text/css; charset=UTF-8 
+INFO  07-22-2019 23:22:44 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916564224   
+INFO  07-22-2019 23:22:44 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 11.3339ms 200 application/json; charset=UTF-8 
+INFO  07-22-2019 23:22:44 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/676/eqjearzz/websocket   
+INFO  07-22-2019 23:22:45 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/676/j4y1ko3b/xhr_streaming?t=1567916564991  0 
+INFO  07-22-2019 23:22:45 Microsoft.AspNetCore.Hosting.Internal.WebHost [13] - Request finished in 4.4682ms 200 application/javascript; charset=UTF-8 
+INFO  07-22-2019 23:22:45 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1134.0166ms 101  
+INFO  07-22-2019 23:22:46 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916566121   
+INFO  07-22-2019 23:22:46 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 4.3766ms 200 application/json; charset=UTF-8 
+INFO  07-22-2019 23:22:46 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/422/x0eip1cz/websocket   
+INFO  07-22-2019 23:22:46 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/422/4505vmjz/xhr_streaming?t=1567916566768  0 
+INFO  07-22-2019 23:22:46 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 4.1993ms 200 application/javascript; charset=UTF-8 
+INFO  07-22-2019 23:22:47 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 1132.7037ms 101  
+INFO  07-22-2019 23:22:47 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916567878   
+INFO  07-22-2019 23:22:47 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request finished in 3.5165ms 200 application/json; charset=UTF-8 
+INFO  07-22-2019 23:22:47 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/727/bhrsbj4w/websocket   
+INFO  07-22-2019 23:22:48 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/727/ysau4ljh/xhr_streaming?t=1567916568517  0 
+INFO  07-22-2019 23:22:48 Microsoft.AspNetCore.Hosting.Internal.WebHost [13] - Request finished in 3.9382ms 200 application/javascript; charset=UTF-8 
+INFO  07-22-2019 23:22:49 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1120.6621ms 101  
+INFO  07-22-2019 23:22:49 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916569567   
+INFO  07-22-2019 23:22:49 Microsoft.AspNetCore.Hosting.Internal.WebHost [13] - Request finished in 3.6118ms 200 application/json; charset=UTF-8 
+INFO  07-22-2019 23:22:49 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/647/0t4tedvz/websocket   
+INFO  07-22-2019 23:22:50 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/647/xfrwri4l/xhr_streaming?t=1567916570214  0 
+INFO  07-22-2019 23:22:50 Microsoft.AspNetCore.Hosting.Internal.WebHost [13] - Request finished in 4.765ms 200 application/javascript; charset=UTF-8 
+INFO  07-22-2019 23:22:50 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1115.4865ms 101  
+INFO  07-22-2019 23:22:51 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916571310   
+INFO  07-22-2019 23:22:51 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request finished in 3.7165ms 200 application/json; charset=UTF-8 
+INFO  07-22-2019 23:22:51 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/124/qfv3ewi4/websocket   
+INFO  07-22-2019 23:22:51 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/124/k33ksbel/xhr_streaming?t=1567916571946  0 
+INFO  07-22-2019 23:22:51 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 6.0725ms 200 application/javascript; charset=UTF-8 
+INFO  07-22-2019 23:22:52 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 1125.7527ms 101  
+INFO  07-22-2019 23:22:53 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916573016   
+INFO  07-22-2019 23:22:53 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request finished in 3.6401ms 200 application/json; charset=UTF-8 
+INFO  07-22-2019 23:22:53 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/794/je0maeba/websocket   
+INFO  07-22-2019 23:22:53 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/794/eops54pm/xhr_streaming?t=1567916573652  0 
+INFO  07-22-2019 23:22:53 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request finished in 4.1631ms 200 application/javascript; charset=UTF-8 
+INFO  07-22-2019 23:22:54 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 1112.6276ms 101  
+INFO  07-22-2019 23:22:54 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916574677   
+INFO  07-22-2019 23:22:54 Microsoft.AspNetCore.Hosting.Internal.WebHost [13] - Request finished in 3.6282ms 200 application/json; charset=UTF-8 
+INFO  07-22-2019 23:22:54 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/043/v5jmjbyz/websocket   
+INFO  07-22-2019 23:22:55 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/043/z2bqalxx/xhr_streaming?t=1567916575317  0 
+INFO  07-22-2019 23:22:55 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 4.3212ms 200 application/javascript; charset=UTF-8 
+INFO  07-22-2019 23:22:55 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request finished in 1130.1113ms 101  
+INFO  07-22-2019 23:22:56 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916576398   
+INFO  07-22-2019 23:22:56 Microsoft.AspNetCore.Hosting.Internal.WebHost [13] - Request finished in 3.5982ms 200 application/json; charset=UTF-8 
+INFO  07-22-2019 23:22:56 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/026/55tbc0p3/websocket   
+INFO  07-22-2019 23:22:57 Microsoft.AspNetCore.Hosting.Internal.WebHost [35] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/026/msx0mevk/xhr_streaming?t=1567916577032  0 
+INFO  07-22-2019 23:22:57 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request finished in 5.5064ms 200 application/javascript; charset=UTF-8 
+INFO  07-22-2019 23:22:57 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1123.7148ms 101  
+INFO  07-22-2019 23:22:58 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916578117   
+INFO  07-22-2019 23:22:58 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request finished in 4.111ms 200 application/json; charset=UTF-8 
+INFO  07-22-2019 23:22:58 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/268/iqjphesd/websocket   
+INFO  07-22-2019 23:22:58 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/268/kgrabnx1/xhr_streaming?t=1567916578767  0 
+INFO  07-22-2019 23:22:58 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 4.1861ms 200 application/javascript; charset=UTF-8 
+INFO  07-22-2019 23:22:59 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request finished in 1133.5741ms 101  
+INFO  07-22-2019 23:22:59 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916579868   
+INFO  07-22-2019 23:22:59 Microsoft.AspNetCore.Hosting.Internal.WebHost [13] - Request finished in 3.923ms 200 application/json; charset=UTF-8 
+INFO  07-22-2019 23:22:59 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/048/uujmnb0a/websocket   
+INFO  07-23-2019 23:23:00 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/048/wkvfb00a/xhr_streaming?t=1567916580508  0 
+INFO  07-23-2019 23:23:00 Microsoft.AspNetCore.Hosting.Internal.WebHost [13] - Request finished in 4.0437ms 200 application/javascript; charset=UTF-8 
+INFO  07-23-2019 23:23:01 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 1122.1568ms 101  
+INFO  07-23-2019 23:23:01 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916581590   
+INFO  07-23-2019 23:23:01 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request finished in 3.3995ms 200 application/json; charset=UTF-8 
+INFO  07-23-2019 23:23:01 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/660/pfloxvzx/websocket   
+INFO  07-23-2019 23:23:02 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/660/xjk4rs04/xhr_streaming?t=1567916582224  0 
+INFO  07-23-2019 23:23:02 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request finished in 4.3926ms 200 application/javascript; charset=UTF-8 
+INFO  07-23-2019 23:23:02 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request finished in 1139.4619ms 101  
+INFO  07-23-2019 23:23:03 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916583285   
+INFO  07-23-2019 23:23:03 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request finished in 3.8684ms 200 application/json; charset=UTF-8 
+INFO  07-23-2019 23:23:03 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/895/kmo2a2to/websocket   
+INFO  07-23-2019 23:23:03 Microsoft.AspNetCore.Hosting.Internal.WebHost [34] - Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/895/vqowfoaz/xhr_streaming?t=1567916583925  0 
+INFO  07-23-2019 23:23:03 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 32.0894ms 200 application/javascript; charset=UTF-8 
+ERROR 07-23-2019 23:23:03 Microsoft.EntityFrameworkCore.Database.Connection [6] - An error occurred using the connection to database 'Test_B' on server '10.1.6.13'. System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+
+ERROR 07-23-2019 23:23:04 Microsoft.EntityFrameworkCore.Query [6] - An exception occurred while iterating over the results of a query for context type 'Biblioteca.Persistence.LibraryDbContext'.
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.GetResult[TResult](IAsyncEnumerable`1 valueBuffers, Boolean throwOnNullResult, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20 System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.GetResult[TResult](IAsyncEnumerable`1 valueBuffers, Boolean throwOnNullResult, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+
+ERROR 07-23-2019 23:23:04 Microsoft.EntityFrameworkCore.Query [6] - An exception occurred while iterating over the results of a query for context type 'Biblioteca.Persistence.LibraryDbContext'.
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.GetResult[TResult](IAsyncEnumerable`1 valueBuffers, Boolean throwOnNullResult, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20 System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.GetResult[TResult](IAsyncEnumerable`1 valueBuffers, Boolean throwOnNullResult, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+
+INFO  07-23-2019 23:23:04 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [6] - Executed action method Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 52686.6433ms. 
+INFO  07-23-2019 23:23:04 Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [6] - Executing ObjectResult, writing value of type 'System.String'. 
+INFO  07-23-2019 23:23:04 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [6] - Executed action Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) in 55701.9634ms 
+INFO  07-23-2019 23:23:04 Microsoft.AspNetCore.Routing.EndpointMiddleware [6] - Executed endpoint 'Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca)' 
+INFO  07-23-2019 23:23:04 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 56010.2156ms 400 text/plain; charset=utf-8 
+INFO  07-23-2019 23:23:04 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 1512.3249ms 101  
+INFO  07-23-2019 23:23:04 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request starting HTTP/1.1 GET https://localhost:5001/api/authors   
+INFO  07-23-2019 23:23:04 Microsoft.AspNetCore.Routing.EndpointMiddleware [6] - Executing endpoint 'Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca)' 
+INFO  07-23-2019 23:23:04 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [6] - Route matched with {action = "GetAuthors", controller = "Author", page = ""}. Executing action Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) 
+INFO  07-23-2019 23:23:05 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [6] - Executing action method Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) with arguments (Biblioteca.Core.Models.GenericQuery) - Validation state: Valid 
+INFO  07-23-2019 23:23:32 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916607221   
+INFO  07-23-2019 23:23:32 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916595134   
+INFO  07-23-2019 23:23:32 Microsoft.EntityFrameworkCore.Infrastructure [6] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  07-23-2019 23:23:32 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916585042   
+INFO  07-23-2019 23:23:32 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 39.7195ms 0  
+INFO  07-23-2019 23:23:32 Microsoft.AspNetCore.Hosting.Internal.WebHost [30] - Request finished in 43.8228ms 0  
+INFO  07-23-2019 23:23:33 Microsoft.AspNetCore.Hosting.Internal.WebHost [13] - Request finished in 1020.3598ms 200 application/json; charset=UTF-8 
+INFO  07-23-2019 23:23:33 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/231/yr5fu34j/websocket   
+ERROR 07-24-2019 23:24:19 Microsoft.EntityFrameworkCore.Database.Connection [6] - An error occurred using the connection to database 'Test_B' on server '10.1.6.13'. System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+
+ERROR 07-24-2019 23:24:19 Microsoft.EntityFrameworkCore.Query [6] - An exception occurred while iterating over the results of a query for context type 'Biblioteca.Persistence.LibraryDbContext'.
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.GetResult[TResult](IAsyncEnumerable`1 valueBuffers, Boolean throwOnNullResult, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20 System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.GetResult[TResult](IAsyncEnumerable`1 valueBuffers, Boolean throwOnNullResult, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+
+ERROR 07-24-2019 23:24:19 Microsoft.EntityFrameworkCore.Query [6] - An exception occurred while iterating over the results of a query for context type 'Biblioteca.Persistence.LibraryDbContext'.
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.GetResult[TResult](IAsyncEnumerable`1 valueBuffers, Boolean throwOnNullResult, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20 System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.GetResult[TResult](IAsyncEnumerable`1 valueBuffers, Boolean throwOnNullResult, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+
+INFO  07-24-2019 23:24:19 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [6] - Executed action method Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 74876.1422ms. 
+INFO  07-24-2019 23:24:19 Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [6] - Executing ObjectResult, writing value of type 'System.String'. 
+INFO  07-24-2019 23:24:19 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [6] - Executed action Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) in 74886.2425ms 
+INFO  07-24-2019 23:24:19 Microsoft.AspNetCore.Routing.EndpointMiddleware [6] - Executed endpoint 'Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca)' 
+INFO  07-24-2019 23:24:19 Microsoft.AspNetCore.Hosting.Internal.WebHost [6] - Request finished in 74907.7034ms 400 text/plain; charset=utf-8 
+INFO  07-24-2019 23:24:20 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request finished in 47132.6249ms 101  
+INFO  07-24-2019 23:24:50 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916690171   
+INFO  07-24-2019 23:24:51 Microsoft.AspNetCore.Hosting.Internal.WebHost [38] - Request finished in 1028.2403ms 200 application/json; charset=UTF-8 
+INFO  07-24-2019 23:24:51 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/415/kz0igp1s/websocket   
+INFO  07-24-2019 23:24:59 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 GET https://localhost:5001/api/authors   
+INFO  07-24-2019 23:24:59 Microsoft.AspNetCore.Routing.EndpointMiddleware [32] - Executing endpoint 'Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca)' 
+INFO  07-24-2019 23:24:59 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [32] - Route matched with {action = "GetAuthors", controller = "Author", page = ""}. Executing action Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) 
+INFO  07-24-2019 23:24:59 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [32] - Executing action method Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) with arguments (Biblioteca.Core.Models.GenericQuery) - Validation state: Valid 
+INFO  07-25-2019 23:25:00 Microsoft.EntityFrameworkCore.Infrastructure [32] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  07-25-2019 23:25:00 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 9615.4923ms 101  
+INFO  07-25-2019 23:25:01 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1567916701980   
+INFO  07-25-2019 23:25:03 Microsoft.AspNetCore.Hosting.Internal.WebHost [43] - Request finished in 1011.9164ms 200 application/json; charset=UTF-8 
+INFO  07-25-2019 23:25:03 Microsoft.AspNetCore.Hosting.Internal.WebHost [32] - Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/473/o2130itw/websocket   
+INFO  07-26-2019 23:26:26 Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager [1] - User profile is available. Using 'C:\Users\andcl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+INFO  07-26-2019 23:26:26 Microsoft.AspNetCore.SpaServices [1] - Starting @angular/cli on port 52664... 
+INFO  07-26-2019 23:26:32 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request starting HTTP/1.1 GET http://localhost:5000/api/authors/   
+INFO  07-26-2019 23:26:32 Microsoft.AspNetCore.Hosting.Internal.WebHost [7] - Request starting HTTP/1.1 GET https://localhost:5001/   
+INFO  07-26-2019 23:26:33 Microsoft.AspNetCore.Routing.EndpointMiddleware [12] - Executing endpoint 'Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca)' 
+INFO  07-26-2019 23:26:33 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [12] - Route matched with {action = "GetAuthors", controller = "Author", page = ""}. Executing action Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) 
+INFO  07-26-2019 23:26:34 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [12] - Executing action method Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) with arguments (Biblioteca.Core.Models.GenericQuery) - Validation state: Valid 
+INFO  07-26-2019 23:26:40 Microsoft.EntityFrameworkCore.Infrastructure [12] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ERROR 07-27-2019 23:27:23 Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware [10] - An unhandled exception has occurred while executing the request. System.TimeoutException: The Angular CLI process did not start listening for requests within the timeout period of 50 seconds. Check the log output for error information.
+   at Microsoft.AspNetCore.SpaServices.Extensions.Util.TaskTimeoutExtensions.WithTimeout[T](Task`1 task, TimeSpan timeoutDelay, String message)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+INFO  07-27-2019 23:27:23 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 50718.4749ms 500 text/html; charset=utf-8 
+ERROR 07-27-2019 23:27:29 Microsoft.EntityFrameworkCore.Database.Connection [10] - An error occurred using the connection to database 'Test_B' on server '10.1.6.13'. System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+
+ERROR 07-27-2019 23:27:29 Microsoft.EntityFrameworkCore.Query [10] - An exception occurred while iterating over the results of a query for context type 'Biblioteca.Persistence.LibraryDbContext'.
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.GetResult[TResult](IAsyncEnumerable`1 valueBuffers, Boolean throwOnNullResult, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20 System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.GetResult[TResult](IAsyncEnumerable`1 valueBuffers, Boolean throwOnNullResult, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+
+ERROR 07-27-2019 23:27:29 Microsoft.EntityFrameworkCore.Query [10] - An exception occurred while iterating over the results of a query for context type 'Biblioteca.Persistence.LibraryDbContext'.
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.GetResult[TResult](IAsyncEnumerable`1 valueBuffers, Boolean throwOnNullResult, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20 System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.GetResult[TResult](IAsyncEnumerable`1 valueBuffers, Boolean throwOnNullResult, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+
+INFO  07-27-2019 23:27:29 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [10] - Executed action method Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 55474.8324ms. 
+INFO  07-27-2019 23:27:29 Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [10] - Executing ObjectResult, writing value of type 'System.String'. 
+INFO  07-27-2019 23:27:29 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [10] - Executed action Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) in 56473.9346ms 
+INFO  07-27-2019 23:27:29 Microsoft.AspNetCore.Routing.EndpointMiddleware [10] - Executed endpoint 'Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca)' 
+INFO  07-27-2019 23:27:29 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 56687.8983ms 400 text/plain; charset=utf-8 
+INFO  07-28-2019 23:28:27 Microsoft.AspNetCore.Hosting.Internal.WebHost [15] - Request starting HTTP/1.1 POST http://localhost:5000/api/books/ application/json 84 
+INFO  07-28-2019 23:28:27 Microsoft.AspNetCore.Routing.EndpointMiddleware [15] - Executing endpoint 'Biblioteca.Controllers.BookController.AddBook (Biblioteca)' 
+INFO  07-28-2019 23:28:27 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [15] - Route matched with {action = "AddBook", controller = "Book", page = ""}. Executing action Biblioteca.Controllers.BookController.AddBook (Biblioteca) 
+INFO  07-28-2019 23:28:28 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [15] - Executing action method Biblioteca.Controllers.BookController.AddBook (Biblioteca) with arguments (Biblioteca.Controllers.Resources.SaveBookResource) - Validation state: Valid 
+INFO  07-28-2019 23:28:46 Microsoft.AspNetCore.SpaServices [6] - > Biblioteca@0.0.0 start C:\Users\andcl\Documents\Programación\Proyectos\dotnet_core\LibraryProject\LibraryProject\ClientApp
+> ng serve "--port" "52664"
+
+** Angular Live Development Server is listening on localhost:52664, open your browser on http://localhost:52664/ **
+ 

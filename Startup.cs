@@ -2,13 +2,13 @@ using AutoMapper;
 using Biblioteca.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Biblioteca.Core;
+using Microsoft.Extensions.Logging;
 
 namespace Biblioteca
 {
@@ -36,11 +36,21 @@ namespace Biblioteca
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            services.AddLogging(logginBuilder => {
+                logginBuilder.AddConfiguration(Configuration.GetSection("Logging"));
+                logginBuilder.AddConsole();
+                logginBuilder.AddDebug();
+                logginBuilder.AddLog4Net(Configuration.GetValue<string>("Log4NetConfigFile:Name"));
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            // loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            // loggerFactory.AddDebug();
+            // loggerFactory.AddLog4Net(Configuration.GetValue<string>("Log4NetConfigFile:Name")); 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -51,8 +61,7 @@ namespace Biblioteca
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
@@ -62,7 +71,6 @@ namespace Biblioteca
                     name: "default",
                     template: "{controller}/{action=Index}/{id?}");
             });
-
             app.UseSpa(spa =>
             {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
