@@ -10,12 +10,11 @@ namespace Biblioteca.Controllers.Resources
     {
         public BookResource()
         {
-            this.Categories = new Collection<BookCategoryResource>();
+            this.Categories = new Collection<KeyValuePair>();
         }
-        public int AuthorId { get; set; }
-        public ICollection<BookCategoryResource> Categories { get; set; }
+        public KeyValuePair Author { get; set; }
+        public ICollection<KeyValuePair> Categories { get; set; }
         [Required]
         public string ISBN { get; set; }
-        public DateTime? LastUpdate { get; set; }
     }
 }

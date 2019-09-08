@@ -18,6 +18,8 @@ namespace Biblioteca.Persistence
             modelBuilder.Entity<BookCategory>().HasKey(bc => new {
                 bc.BookId, bc.CategoryId
             });
+            //ISBN is an unique code asigned for every book
+            modelBuilder.Entity<Book>().HasIndex( b => b.ISBN).IsUnique();
         }
     }
 }

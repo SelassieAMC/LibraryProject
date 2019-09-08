@@ -20,6 +20,7 @@ namespace Biblioteca.Persistence {
             if(includeRelatedObjects)
                 return await context.Books
                     .Include(B => B.Categories)
+                        .ThenInclude(bc => bc.Category)
                     .Include(B => B.Author)
                     .FirstOrDefaultAsync(B => B.Id.Equals(bookId));
             return await context.Books.FindAsync(bookId);
@@ -28,8 +29,9 @@ namespace Biblioteca.Persistence {
         public async Task<QueryResult<Book>> GetBooksAsync (BookQuery queryObj) {
             var result = new QueryResult<Book>();
             
-            var query =  context.Books
+            var query =  context.Books.OrderBy(B => B.Id)
             .Include(B => B.Categories)
+                .ThenInclude( bc => bc.Category)
             .Include(B => B.Author).AsQueryable();
 
             query = query.ApplyFiltering(queryObj);

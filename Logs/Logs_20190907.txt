@@ -820,3 +820,521 @@ INFO  07-28-2019 23:28:46 Microsoft.AspNetCore.SpaServices [6] - > Biblioteca@0.
 
 ** Angular Live Development Server is listening on localhost:52664, open your browser on http://localhost:52664/ **
  
+INFO  07-50-2019 23:50:19 Microsoft.EntityFrameworkCore.Infrastructure [1] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  07-51-2019 23:51:25 Microsoft.EntityFrameworkCore.Infrastructure [1] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  07-51-2019 23:51:37 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (1,551ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [Test_B]; 
+INFO  07-51-2019 23:51:37 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (364ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [Test_B] SET READ_COMMITTED_SNAPSHOT ON;
+END; 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (57ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+); 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (105ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Migrations [1] - Applying migration '20190905190349_InitialState'. 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (84ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Authors] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(255) NOT NULL,
+    [LastName] nvarchar(255) NULL,
+    [BirthDay] datetime2 NOT NULL,
+    CONSTRAINT [PK_Authors] PRIMARY KEY ([Id])
+); 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Categories] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(255) NOT NULL,
+    [Description] nvarchar(255) NULL,
+    CONSTRAINT [PK_Categories] PRIMARY KEY ([Id])
+); 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Books] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [AuthorId] int NOT NULL,
+    [ISBN] nvarchar(max) NULL,
+    CONSTRAINT [PK_Books] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Books_Authors_AuthorId] FOREIGN KEY ([AuthorId]) REFERENCES [Authors] ([Id]) ON DELETE CASCADE
+); 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [BookCategory] (
+    [BookId] int NOT NULL,
+    [CategoryId] int NOT NULL,
+    CONSTRAINT [PK_BookCategory] PRIMARY KEY ([BookId], [CategoryId]),
+    CONSTRAINT [FK_BookCategory_Books_BookId] FOREIGN KEY ([BookId]) REFERENCES [Books] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_BookCategory_Categories_CategoryId] FOREIGN KEY ([CategoryId]) REFERENCES [Categories] ([Id]) ON DELETE CASCADE
+); 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_BookCategory_CategoryId] ON [BookCategory] ([CategoryId]); 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Books_AuthorId] ON [Books] ([AuthorId]); 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20190905190349_InitialState', N'2.2.6-servicing-10079'); 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Migrations [1] - Applying migration '20190905224224_UpdatingModels'. 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Categories] ADD [LastUpdate] datetime2 NOT NULL DEFAULT '0001-01-01T00:00:00.0000000'; 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Books] ADD [LastUpdate] datetime2 NOT NULL DEFAULT '0001-01-01T00:00:00.0000000'; 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (190ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Authors]') AND [c].[name] = N'BirthDay');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [Authors] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [Authors] ALTER COLUMN [BirthDay] datetime2 NULL; 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Authors] ADD [LastUpdate] datetime2 NULL; 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20190905224224_UpdatingModels', N'2.2.6-servicing-10079'); 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Migrations [1] - Applying migration '20190905224313_SeedingAuthors'. 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO Authors (Name,LastName) VALUES ('name1','lastName1') 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO Authors (Name,LastName) VALUES ('name2','lastName2') 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO Authors (Name,LastName) VALUES ('name3','lastName3') 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO Authors (Name,LastName) VALUES ('name4','lastName4') 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO Authors (Name,LastName) VALUES ('name5','lastName5') 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20190905224313_SeedingAuthors', N'2.2.6-servicing-10079'); 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Migrations [1] - Applying migration '20190906172126_SeedingCategoriesBooks'. 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @var1 sysname;
+SELECT @var1 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Categories]') AND [c].[name] = N'LastUpdate');
+IF @var1 IS NOT NULL EXEC(N'ALTER TABLE [Categories] DROP CONSTRAINT [' + @var1 + '];');
+ALTER TABLE [Categories] ALTER COLUMN [LastUpdate] datetime2 NULL; 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @var2 sysname;
+SELECT @var2 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Books]') AND [c].[name] = N'LastUpdate');
+IF @var2 IS NOT NULL EXEC(N'ALTER TABLE [Books] DROP CONSTRAINT [' + @var2 + '];');
+ALTER TABLE [Books] ALTER COLUMN [LastUpdate] datetime2 NULL; 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO Categories (Name,Description) VALUES ('category1','this is a category 1') 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO Categories (Name,Description) VALUES ('category2','this is a category 2') 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO Categories (Name,Description) VALUES ('category3','this is a category 3') 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO Categories (Name,Description) VALUES ('category4','this is a category 4') 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO Categories (Name,Description) VALUES ('category5','this is a category 5') 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO Categories (Name,Description) VALUES ('category6','this is a category 6') 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO Books (Name,AuthorId,ISBN) VALUES ('Book1',(SELECT Id FROM Authors WHERE Name = 'name3'),'asda-asd-asd-asd-asd1') 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO Books (Name,AuthorId,ISBN) VALUES ('Book2',(SELECT Id FROM Authors WHERE Name = 'name4'),'asda-asd-asd-asd-asd2') 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO Books (Name,AuthorId,ISBN) VALUES ('Book3',(SELECT Id FROM Authors WHERE Name = 'name5'),'asda-asd-asd-asd-asd3') 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO Books (Name,AuthorId,ISBN) VALUES ('Book4',(SELECT Id FROM Authors WHERE Name = 'name3'),'asda-asd-asd-asd-asd4') 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO Books (Name,AuthorId,ISBN) VALUES ('Book5',(SELECT Id FROM Authors WHERE Name = 'name4'),'asda-asd-asd-asd-asd5') 
+INFO  07-51-2019 23:51:38 Microsoft.EntityFrameworkCore.Database.Command [1] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20190906172126_SeedingCategoriesBooks', N'2.2.6-servicing-10079'); 
+INFO  07-53-2019 23:53:42 Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager [1] - User profile is available. Using 'C:\Users\andcl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+INFO  07-53-2019 23:53:43 Microsoft.AspNetCore.SpaServices [1] - Starting @angular/cli on port 50053... 
+INFO  07-54-2019 23:54:55 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 POST http://localhost:5000/api/books/ application/json 84 
+INFO  07-54-2019 23:54:55 Microsoft.AspNetCore.Routing.EndpointMiddleware [10] - Executing endpoint 'Biblioteca.Controllers.BookController.AddBook (Biblioteca)' 
+INFO  07-54-2019 23:54:55 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [10] - Route matched with {action = "AddBook", controller = "Book", page = ""}. Executing action Biblioteca.Controllers.BookController.AddBook (Biblioteca) 
+INFO  07-54-2019 23:54:57 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [10] - Executing action method Biblioteca.Controllers.BookController.AddBook (Biblioteca) with arguments (Biblioteca.Controllers.Resources.SaveBookResource) - Validation state: Valid 
+INFO  07-54-2019 23:54:57 Microsoft.EntityFrameworkCore.Infrastructure [10] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  07-54-2019 23:54:59 Microsoft.EntityFrameworkCore.Database.Command [7] - Executed DbCommand (330ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Books] ([AuthorId], [ISBN], [LastUpdate], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Books]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); 
+INFO  07-54-2019 23:54:59 Microsoft.EntityFrameworkCore.Database.Command [10] - Executed DbCommand (52ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [BookCategory] ([BookId], [CategoryId])
+VALUES (@p0, @p1); 
+INFO  07-54-2019 23:54:59 Microsoft.EntityFrameworkCore.Database.Command [10] - Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [BookCategory] ([BookId], [CategoryId])
+VALUES (@p0, @p1); 
+INFO  07-54-2019 23:54:59 Microsoft.EntityFrameworkCore.Database.Command [14] - Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [BookCategory] ([BookId], [CategoryId])
+VALUES (@p0, @p1); 
+INFO  07-55-2019 23:55:00 Microsoft.EntityFrameworkCore.Database.Command [10] - Executed DbCommand (24ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [B].[Id], [B].[AuthorId], [B].[ISBN], [B].[LastUpdate], [B].[Name], [B.Author].[Id], [B.Author].[BirthDay], [B.Author].[LastName], [B.Author].[LastUpdate], [B.Author].[Name]
+FROM [Books] AS [B]
+INNER JOIN [Authors] AS [B.Author] ON [B].[AuthorId] = [B.Author].[Id]
+WHERE [B].[Id] = @__bookId_0
+ORDER BY [B].[Id] 
+INFO  07-55-2019 23:55:00 Microsoft.EntityFrameworkCore.Database.Command [14] - Executed DbCommand (5ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [B.Categories].[BookId], [B.Categories].[CategoryId]
+FROM [BookCategory] AS [B.Categories]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [B0].[Id]
+        FROM [Books] AS [B0]
+        INNER JOIN [Authors] AS [B.Author0] ON [B0].[AuthorId] = [B.Author0].[Id]
+        WHERE [B0].[Id] = @__bookId_0
+        ORDER BY [B0].[Id]
+    ) AS [t]
+) AS [t0] ON [B.Categories].[BookId] = [t0].[Id]
+ORDER BY [t0].[Id] 
+INFO  07-55-2019 23:55:01 Biblioteca.Controllers.BookController [14] - [null] 
+INFO  07-55-2019 23:55:01 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [14] - Executed action method Biblioteca.Controllers.BookController.AddBook (Biblioteca), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 3989.2104ms. 
+INFO  07-55-2019 23:55:01 Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [14] - Executing ObjectResult, writing value of type 'System.String'. 
+INFO  07-55-2019 23:55:01 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [14] - Executed action Biblioteca.Controllers.BookController.AddBook (Biblioteca) in 5401.828ms 
+INFO  07-55-2019 23:55:01 Microsoft.AspNetCore.Routing.EndpointMiddleware [14] - Executed endpoint 'Biblioteca.Controllers.BookController.AddBook (Biblioteca)' 
+INFO  07-55-2019 23:55:01 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 5932.6939ms 400 text/plain; charset=utf-8 
+INFO  07-55-2019 23:55:56 Microsoft.AspNetCore.SpaServices [5] - > Biblioteca@0.0.0 start C:\Users\andcl\Documents\Programaci├│n\Proyectos\dotnet_core\LibraryProject\LibraryProject\ClientApp
+> ng serve "--port" "50053"
+
+** Angular Live Development Server is listening on localhost:50053, open your browser on http://localhost:50053/ **
+ 
+INFO  07-56-2019 23:56:25 Microsoft.AspNetCore.SpaServices [5] - Date: 2019-09-08T04:56:25.672Z
+Hash: 9856ea5d377214738cd4
+Time: 28022ms
+chunk {main} main.js, main.js.map (main) 27.3 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 223 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.css, styles.css.map (styles) 139 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 4.12 MB [initial] [rendered]
+i ´¢ówdm´¢ú: Compiled successfully.
+ 
+INFO  07-57-2019 23:57:51 Microsoft.AspNetCore.Hosting.Internal.WebHost [19] - Request starting HTTP/1.1 POST http://localhost:5000/api/authors/ application/json 92 
+INFO  07-57-2019 23:57:51 Microsoft.AspNetCore.Routing.EndpointMiddleware [19] - Executing endpoint 'Biblioteca.Controllers.AuthorController.AddAuthor (Biblioteca)' 
+INFO  07-57-2019 23:57:51 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [19] - Route matched with {action = "AddAuthor", controller = "Author", page = ""}. Executing action Biblioteca.Controllers.AuthorController.AddAuthor (Biblioteca) 
+INFO  07-57-2019 23:57:51 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [19] - Executing action method Biblioteca.Controllers.AuthorController.AddAuthor (Biblioteca) with arguments (Biblioteca.Controllers.Resources.AuthorResource) - Validation state: Valid 
+INFO  07-57-2019 23:57:51 Microsoft.EntityFrameworkCore.Infrastructure [19] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  07-57-2019 23:57:51 Microsoft.EntityFrameworkCore.Database.Command [19] - Executed DbCommand (60ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 255), @p2='?' (DbType = DateTime2), @p3='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Authors] ([BirthDay], [LastName], [LastUpdate], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Authors]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); 
+INFO  07-57-2019 23:57:51 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [19] - Executed action method Biblioteca.Controllers.AuthorController.AddAuthor (Biblioteca), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 100.5713ms. 
+INFO  07-57-2019 23:57:51 Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [19] - Executing ObjectResult, writing value of type 'Biblioteca.Controllers.Resources.AuthorResource'. 
+INFO  07-57-2019 23:57:51 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [19] - Executed action Biblioteca.Controllers.AuthorController.AddAuthor (Biblioteca) in 260.1342ms 
+INFO  07-57-2019 23:57:51 Microsoft.AspNetCore.Routing.EndpointMiddleware [19] - Executed endpoint 'Biblioteca.Controllers.AuthorController.AddAuthor (Biblioteca)' 
+INFO  07-57-2019 23:57:51 Microsoft.AspNetCore.Hosting.Internal.WebHost [19] - Request finished in 280.0827ms 200 application/json; charset=utf-8 
+INFO  07-59-2019 23:59:14 Microsoft.AspNetCore.Hosting.Internal.WebHost [29] - Request starting HTTP/1.1 PUT http://localhost:5000/api/authors/update/5 application/json 105 
+INFO  07-59-2019 23:59:14 Microsoft.AspNetCore.Routing.EndpointMiddleware [29] - Executing endpoint 'Biblioteca.Controllers.AuthorController.UpdateAuthor (Biblioteca)' 
+INFO  07-59-2019 23:59:14 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [29] - Route matched with {action = "UpdateAuthor", controller = "Author", page = ""}. Executing action Biblioteca.Controllers.AuthorController.UpdateAuthor (Biblioteca) 
+INFO  07-59-2019 23:59:14 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [29] - Executing action method Biblioteca.Controllers.AuthorController.UpdateAuthor (Biblioteca) with arguments (5, Biblioteca.Controllers.Resources.AuthorResource) - Validation state: Valid 
+INFO  07-59-2019 23:59:14 Microsoft.EntityFrameworkCore.Infrastructure [29] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  07-59-2019 23:59:14 Microsoft.EntityFrameworkCore.Database.Command [29] - Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[BirthDay], [e].[LastName], [e].[LastUpdate], [e].[Name]
+FROM [Authors] AS [e]
+WHERE [e].[Id] = @__get_Item_0 
+INFO  07-59-2019 23:59:14 Microsoft.EntityFrameworkCore.Database.Command [29] - Executed DbCommand (4ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (Size = 255), @p2='?' (DbType = DateTime2), @p3='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Authors] SET [BirthDay] = @p0, [LastName] = @p1, [LastUpdate] = @p2, [Name] = @p3
+WHERE [Id] = @p4;
+SELECT @@ROWCOUNT; 
+INFO  07-59-2019 23:59:14 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [29] - Executed action method Biblioteca.Controllers.AuthorController.UpdateAuthor (Biblioteca), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 64.1572ms. 
+INFO  07-59-2019 23:59:14 Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [29] - Executing ObjectResult, writing value of type 'Biblioteca.Controllers.Resources.AuthorResource'. 
+INFO  07-59-2019 23:59:14 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [29] - Executed action Biblioteca.Controllers.AuthorController.UpdateAuthor (Biblioteca) in 67.0745ms 
+INFO  07-59-2019 23:59:14 Microsoft.AspNetCore.Routing.EndpointMiddleware [29] - Executed endpoint 'Biblioteca.Controllers.AuthorController.UpdateAuthor (Biblioteca)' 
+INFO  07-59-2019 23:59:14 Microsoft.AspNetCore.Hosting.Internal.WebHost [29] - Request finished in 110.0894ms 200 application/json; charset=utf-8 
+INFO  08-00-2019 00:00:16 Microsoft.AspNetCore.Server.Kestrel [28] - Connection id "0HLPK32OB2TR1" bad request data: "Invalid request line: '\x16\x03\x01\x00\xE1\x01\x00\x00\xDD\x03\x03?~@\x8E]\xCD\xF4\xC3\xCB-\x82\x1E-r$\xDA\xFE?\xA9\x02\xC8^\xC2&\xF4\x15n\xA9\xE2\x0D\xFD\xFF\x00\x00\\xC0/\xC0+\xC00\xC0,\x00\x9E\xC0'\x00g\xC0(\x00k\x00\xA3\x00\x9F\xCC\xA9\xCC\xA8\xCC\xAA\xC0\xAF\xC0\xAD\xC0\xA3\xC0\x9F\x00\xA2\xC0\xAE\xC0\xAC\xC0\xA2\xC0\x9E\xC0$\x00j\xC0#\x00@\xC0\x0A'" Microsoft.AspNetCore.Server.Kestrel.Core.BadHttpRequestException: Invalid request line: '\x16\x03\x01\x00\xE1\x01\x00\x00\xDD\x03\x03?~@\x8E]\xCD\xF4\xC3\xCB-\x82\x1E-r$\xDA\xFE?\xA9\x02\xC8^\xC2&\xF4\x15n\xA9\xE2\x0D\xFD\xFF\x00\x00\\xC0/\xC0+\xC00\xC0,\x00\x9E\xC0'\x00g\xC0(\x00k\x00\xA3\x00\x9F\xCC\xA9\xCC\xA8\xCC\xAA\xC0\xAF\xC0\xAD\xC0\xA3\xC0\x9F\x00\xA2\xC0\xAE\xC0\xAC\xC0\xA2\xC0\x9E\xC0$\x00j\xC0#\x00@\xC0\x0A'
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.RejectRequestLine(Byte* requestLine, Int32 length)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.GetUnknownMethod(Byte* data, Int32 length, Int32& methodLength)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.ParseRequestLine(TRequestHandler handler, Byte* data, Int32 length)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.ParseRequestLine(TRequestHandler handler, ReadOnlySequence`1& buffer, SequencePosition& consumed, SequencePosition& examined)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.IHttpParser<TRequestHandler>.ParseRequestLine(TRequestHandler handler, ReadOnlySequence`1& buffer, SequencePosition& consumed, SequencePosition& examined)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.TakeStartLine(ReadOnlySequence`1 buffer, SequencePosition& consumed, SequencePosition& examined)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.ParseRequest(ReadOnlySequence`1 buffer, SequencePosition& consumed, SequencePosition& examined)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.TryParseRequest(ReadResult result, Boolean& endConnection)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+
+INFO  08-00-2019 00:00:28 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request starting HTTP/1.1 DELETE http://localhost:5000/api/authors/remove/1  0 
+INFO  08-00-2019 00:00:28 Microsoft.AspNetCore.Routing.EndpointMiddleware [28] - Executing endpoint 'Biblioteca.Controllers.AuthorController.RemoveAuthorByIdAsync (Biblioteca)' 
+INFO  08-00-2019 00:00:28 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [28] - Route matched with {action = "RemoveAuthorByIdAsync", controller = "Author", page = ""}. Executing action Biblioteca.Controllers.AuthorController.RemoveAuthorByIdAsync (Biblioteca) 
+INFO  08-00-2019 00:00:28 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [28] - Executing action method Biblioteca.Controllers.AuthorController.RemoveAuthorByIdAsync (Biblioteca) with arguments (1) - Validation state: Valid 
+INFO  08-00-2019 00:00:28 Microsoft.EntityFrameworkCore.Infrastructure [28] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  08-00-2019 00:00:28 Microsoft.EntityFrameworkCore.Database.Command [28] - Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[BirthDay], [e].[LastName], [e].[LastUpdate], [e].[Name]
+FROM [Authors] AS [e]
+WHERE [e].[Id] = @__get_Item_0 
+INFO  08-00-2019 00:00:28 Microsoft.EntityFrameworkCore.Database.Command [28] - Executed DbCommand (35ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Authors]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT; 
+INFO  08-00-2019 00:00:28 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [28] - Executed action method Biblioteca.Controllers.AuthorController.RemoveAuthorByIdAsync (Biblioteca), returned result Microsoft.AspNetCore.Mvc.OkResult in 180.2626ms. 
+INFO  08-00-2019 00:00:28 Microsoft.AspNetCore.Mvc.StatusCodeResult [28] - Executing HttpStatusCodeResult, setting HTTP status code 200 
+INFO  08-00-2019 00:00:28 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [28] - Executed action Biblioteca.Controllers.AuthorController.RemoveAuthorByIdAsync (Biblioteca) in 184.8975ms 
+INFO  08-00-2019 00:00:28 Microsoft.AspNetCore.Routing.EndpointMiddleware [28] - Executed endpoint 'Biblioteca.Controllers.AuthorController.RemoveAuthorByIdAsync (Biblioteca)' 
+INFO  08-00-2019 00:00:28 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 233.0679ms 200  
+INFO  08-01-2019 00:01:16 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request starting HTTP/1.1 GET http://localhost:5000/api/authors?Page=1&PageSize=2   
+INFO  08-01-2019 00:01:16 Microsoft.AspNetCore.Routing.EndpointMiddleware [28] - Executing endpoint 'Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca)' 
+INFO  08-01-2019 00:01:16 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [28] - Route matched with {action = "GetAuthors", controller = "Author", page = ""}. Executing action Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) 
+INFO  08-01-2019 00:01:16 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [28] - Executing action method Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) with arguments (Biblioteca.Core.Models.GenericQuery) - Validation state: Valid 
+INFO  08-01-2019 00:01:16 Microsoft.EntityFrameworkCore.Infrastructure [28] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  08-01-2019 00:01:16 Microsoft.EntityFrameworkCore.Database.Command [35] - Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM (
+    SELECT [A].*
+    FROM [Authors] AS [A]
+    ORDER BY [A].[Id]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t] 
+INFO  08-01-2019 00:01:16 Microsoft.EntityFrameworkCore.Database.Command [28] - Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [A].[Id], [A].[BirthDay], [A].[LastName], [A].[LastUpdate], [A].[Name]
+FROM [Authors] AS [A]
+ORDER BY [A].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+INFO  08-01-2019 00:01:16 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [28] - Executed action method Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 191.8026ms. 
+INFO  08-01-2019 00:01:16 Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [28] - Executing ObjectResult, writing value of type 'Biblioteca.Controllers.Resources.QueryResultResource`1[[Biblioteca.Controllers.Resources.AuthorResource, Biblioteca, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+INFO  08-01-2019 00:01:16 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [28] - Executed action Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) in 234.1222ms 
+INFO  08-01-2019 00:01:16 Microsoft.AspNetCore.Routing.EndpointMiddleware [28] - Executed endpoint 'Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca)' 
+INFO  08-01-2019 00:01:16 Microsoft.AspNetCore.Hosting.Internal.WebHost [28] - Request finished in 246.2139ms 200 application/json; charset=utf-8 
+INFO  08-02-2019 00:02:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [37] - Request starting HTTP/1.1 GET http://localhost:5000/api/authors   
+INFO  08-02-2019 00:02:43 Microsoft.AspNetCore.Routing.EndpointMiddleware [37] - Executing endpoint 'Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca)' 
+INFO  08-02-2019 00:02:43 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [37] - Route matched with {action = "GetAuthors", controller = "Author", page = ""}. Executing action Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) 
+INFO  08-02-2019 00:02:43 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [37] - Executing action method Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) with arguments (Biblioteca.Core.Models.GenericQuery) - Validation state: Valid 
+INFO  08-02-2019 00:02:43 Microsoft.EntityFrameworkCore.Infrastructure [37] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  08-02-2019 00:02:43 Microsoft.EntityFrameworkCore.Database.Command [39] - Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM (
+    SELECT [A].*
+    FROM [Authors] AS [A]
+    ORDER BY [A].[Id]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t] 
+INFO  08-02-2019 00:02:43 Microsoft.EntityFrameworkCore.Database.Command [39] - Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [A].[Id], [A].[BirthDay], [A].[LastName], [A].[LastUpdate], [A].[Name]
+FROM [Authors] AS [A]
+ORDER BY [A].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+INFO  08-02-2019 00:02:43 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [39] - Executed action method Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.7108ms. 
+INFO  08-02-2019 00:02:43 Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [39] - Executing ObjectResult, writing value of type 'Biblioteca.Controllers.Resources.QueryResultResource`1[[Biblioteca.Controllers.Resources.AuthorResource, Biblioteca, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+INFO  08-02-2019 00:02:43 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [39] - Executed action Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) in 5.6809ms 
+INFO  08-02-2019 00:02:43 Microsoft.AspNetCore.Routing.EndpointMiddleware [39] - Executed endpoint 'Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca)' 
+INFO  08-02-2019 00:02:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [39] - Request finished in 6.7076ms 200 application/json; charset=utf-8 
+INFO  08-03-2019 00:03:30 Microsoft.AspNetCore.Hosting.Internal.WebHost [40] - Request starting HTTP/1.1 GET http://localhost:5000/api/authors   
+INFO  08-03-2019 00:03:30 Microsoft.AspNetCore.Routing.EndpointMiddleware [40] - Executing endpoint 'Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca)' 
+INFO  08-03-2019 00:03:30 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [40] - Route matched with {action = "GetAuthors", controller = "Author", page = ""}. Executing action Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) 
+INFO  08-03-2019 00:03:30 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [40] - Executing action method Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) with arguments (Biblioteca.Core.Models.GenericQuery) - Validation state: Valid 
+INFO  08-03-2019 00:03:30 Microsoft.EntityFrameworkCore.Infrastructure [40] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  08-03-2019 00:03:30 Microsoft.EntityFrameworkCore.Database.Command [40] - Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM (
+    SELECT [A].*
+    FROM [Authors] AS [A]
+    ORDER BY [A].[Id]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t] 
+INFO  08-03-2019 00:03:30 Microsoft.EntityFrameworkCore.Database.Command [40] - Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [A].[Id], [A].[BirthDay], [A].[LastName], [A].[LastUpdate], [A].[Name]
+FROM [Authors] AS [A]
+ORDER BY [A].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+INFO  08-03-2019 00:03:30 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [40] - Executed action method Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.34ms. 
+INFO  08-03-2019 00:03:30 Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [40] - Executing ObjectResult, writing value of type 'Biblioteca.Controllers.Resources.QueryResultResource`1[[Biblioteca.Controllers.Resources.AuthorResource, Biblioteca, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+INFO  08-03-2019 00:03:30 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [40] - Executed action Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca) in 4.2457ms 
+INFO  08-03-2019 00:03:30 Microsoft.AspNetCore.Routing.EndpointMiddleware [40] - Executed endpoint 'Biblioteca.Controllers.AuthorController.GetAuthors (Biblioteca)' 
+INFO  08-03-2019 00:03:30 Microsoft.AspNetCore.Hosting.Internal.WebHost [40] - Request finished in 5.0129ms 200 application/json; charset=utf-8 
+INFO  08-06-2019 00:06:09 Microsoft.AspNetCore.Hosting.Internal.WebHost [46] - Request starting HTTP/1.1 GET http://localhost:5000/api/categories application/json 32 
+INFO  08-06-2019 00:06:09 Microsoft.AspNetCore.Routing.EndpointMiddleware [46] - Executing endpoint 'Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca)' 
+INFO  08-06-2019 00:06:09 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [46] - Route matched with {action = "GetCategories", controller = "Category", page = ""}. Executing action Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca) 
+INFO  08-06-2019 00:06:09 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [46] - Executing action method Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca) with arguments (Biblioteca.Core.Models.GenericQuery) - Validation state: Valid 
+INFO  08-06-2019 00:06:09 Microsoft.EntityFrameworkCore.Infrastructure [46] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  08-06-2019 00:06:09 Microsoft.EntityFrameworkCore.Database.Command [52] - Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM (
+    SELECT [C].*
+    FROM [Categories] AS [C]
+    ORDER BY [C].[Id]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t] 
+INFO  08-06-2019 00:06:09 Microsoft.EntityFrameworkCore.Database.Command [46] - Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [C].[Id], [C].[Description], [C].[LastUpdate], [C].[Name]
+FROM [Categories] AS [C]
+ORDER BY [C].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+INFO  08-06-2019 00:06:09 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [46] - Executed action method Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 45.5894ms. 
+INFO  08-06-2019 00:06:09 Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [46] - Executing ObjectResult, writing value of type 'Biblioteca.Controllers.Resources.QueryResultResource`1[[Biblioteca.Controllers.Resources.CategoryResource, Biblioteca, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+INFO  08-06-2019 00:06:09 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [46] - Executed action Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca) in 53.5787ms 
+INFO  08-06-2019 00:06:09 Microsoft.AspNetCore.Routing.EndpointMiddleware [46] - Executed endpoint 'Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca)' 
+INFO  08-06-2019 00:06:09 Microsoft.AspNetCore.Hosting.Internal.WebHost [46] - Request finished in 62.0471ms 200 application/json; charset=utf-8 
+INFO  08-06-2019 00:06:09 Microsoft.AspNetCore.Server.Kestrel [46] - Connection id "0HLPK32OB2TR3", Request id "0HLPK32OB2TR3:00000001": the application completed without reading the entire request body. 
+INFO  08-06-2019 00:06:27 Microsoft.AspNetCore.Hosting.Internal.WebHost [55] - Request starting HTTP/1.1 POST http://localhost:5000/api/categories application/json 32 
+INFO  08-06-2019 00:06:27 Microsoft.AspNetCore.Routing.EndpointMiddleware [55] - Executing endpoint 'Biblioteca.Controllers.CategoryController.AddCategory (Biblioteca)' 
+INFO  08-06-2019 00:06:27 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [55] - Route matched with {action = "AddCategory", controller = "Category", page = ""}. Executing action Biblioteca.Controllers.CategoryController.AddCategory (Biblioteca) 
+INFO  08-06-2019 00:06:27 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [55] - Executing action method Biblioteca.Controllers.CategoryController.AddCategory (Biblioteca) with arguments (Biblioteca.Controllers.Resources.CategoryResource) - Validation state: Valid 
+INFO  08-06-2019 00:06:27 Microsoft.EntityFrameworkCore.Infrastructure [55] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  08-06-2019 00:06:27 Microsoft.EntityFrameworkCore.Database.Command [55] - Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 255), @p1='?' (DbType = DateTime2), @p2='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Categories] ([Description], [LastUpdate], [Name])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Categories]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); 
+INFO  08-06-2019 00:06:27 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [55] - Executed action method Biblioteca.Controllers.CategoryController.AddCategory (Biblioteca), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 40.5735ms. 
+INFO  08-06-2019 00:06:27 Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [55] - Executing ObjectResult, writing value of type 'Biblioteca.Controllers.Resources.CategoryResource'. 
+INFO  08-06-2019 00:06:27 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [55] - Executed action Biblioteca.Controllers.CategoryController.AddCategory (Biblioteca) in 43.1262ms 
+INFO  08-06-2019 00:06:27 Microsoft.AspNetCore.Routing.EndpointMiddleware [55] - Executed endpoint 'Biblioteca.Controllers.CategoryController.AddCategory (Biblioteca)' 
+INFO  08-06-2019 00:06:27 Microsoft.AspNetCore.Hosting.Internal.WebHost [55] - Request finished in 48.8867ms 200 application/json; charset=utf-8 
+INFO  08-07-2019 00:07:29 Microsoft.AspNetCore.Hosting.Internal.WebHost [54] - Request starting HTTP/1.1 PUT http://localhost:5000/api/categories/update/7 application/json 85 
+INFO  08-07-2019 00:07:29 Microsoft.AspNetCore.Routing.EndpointMiddleware [54] - Executing endpoint 'Biblioteca.Controllers.CategoryController.UpdateCategory (Biblioteca)' 
+INFO  08-07-2019 00:07:29 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [54] - Route matched with {action = "UpdateCategory", controller = "Category", page = ""}. Executing action Biblioteca.Controllers.CategoryController.UpdateCategory (Biblioteca) 
+INFO  08-07-2019 00:07:29 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [54] - Executing action method Biblioteca.Controllers.CategoryController.UpdateCategory (Biblioteca) with arguments (7, Biblioteca.Controllers.Resources.CategoryResource) - Validation state: Valid 
+INFO  08-07-2019 00:07:29 Microsoft.EntityFrameworkCore.Infrastructure [54] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  08-07-2019 00:07:29 Microsoft.EntityFrameworkCore.Database.Command [58] - Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[Description], [e].[LastUpdate], [e].[Name]
+FROM [Categories] AS [e]
+WHERE [e].[Id] = @__get_Item_0 
+INFO  08-07-2019 00:07:29 Microsoft.EntityFrameworkCore.Database.Command [53] - Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (Size = 255), @p1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Categories] SET [Description] = @p0, [LastUpdate] = @p1
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT; 
+INFO  08-07-2019 00:07:29 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [53] - Executed action method Biblioteca.Controllers.CategoryController.UpdateCategory (Biblioteca), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 26.019ms. 
+INFO  08-07-2019 00:07:29 Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [53] - Executing ObjectResult, writing value of type 'Biblioteca.Controllers.Resources.CategoryResource'. 
+INFO  08-07-2019 00:07:29 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [53] - Executed action Biblioteca.Controllers.CategoryController.UpdateCategory (Biblioteca) in 28.1336ms 
+INFO  08-07-2019 00:07:29 Microsoft.AspNetCore.Routing.EndpointMiddleware [53] - Executed endpoint 'Biblioteca.Controllers.CategoryController.UpdateCategory (Biblioteca)' 
+INFO  08-07-2019 00:07:29 Microsoft.AspNetCore.Hosting.Internal.WebHost [53] - Request finished in 33.732ms 200 application/json; charset=utf-8 
+INFO  08-08-2019 00:08:00 Microsoft.AspNetCore.Hosting.Internal.WebHost [59] - Request starting HTTP/1.1 DELETE http://localhost:5000/api/categories/remove/1  0 
+INFO  08-08-2019 00:08:00 Microsoft.AspNetCore.Routing.EndpointMiddleware [59] - Executing endpoint 'Biblioteca.Controllers.CategoryController.RemoveCategoryByIdAsync (Biblioteca)' 
+INFO  08-08-2019 00:08:00 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [59] - Route matched with {action = "RemoveCategoryByIdAsync", controller = "Category", page = ""}. Executing action Biblioteca.Controllers.CategoryController.RemoveCategoryByIdAsync (Biblioteca) 
+INFO  08-08-2019 00:08:00 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [59] - Executing action method Biblioteca.Controllers.CategoryController.RemoveCategoryByIdAsync (Biblioteca) with arguments (1) - Validation state: Valid 
+INFO  08-08-2019 00:08:00 Microsoft.EntityFrameworkCore.Infrastructure [59] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  08-08-2019 00:08:00 Microsoft.EntityFrameworkCore.Database.Command [61] - Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[Description], [e].[LastUpdate], [e].[Name]
+FROM [Categories] AS [e]
+WHERE [e].[Id] = @__get_Item_0 
+INFO  08-08-2019 00:08:00 Microsoft.EntityFrameworkCore.Database.Command [61] - Executed DbCommand (15ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Categories]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT; 
+INFO  08-08-2019 00:08:00 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [61] - Executed action method Biblioteca.Controllers.CategoryController.RemoveCategoryByIdAsync (Biblioteca), returned result Microsoft.AspNetCore.Mvc.OkResult in 29.4227ms. 
+INFO  08-08-2019 00:08:00 Microsoft.AspNetCore.Mvc.StatusCodeResult [61] - Executing HttpStatusCodeResult, setting HTTP status code 200 
+INFO  08-08-2019 00:08:00 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [61] - Executed action Biblioteca.Controllers.CategoryController.RemoveCategoryByIdAsync (Biblioteca) in 30.4129ms 
+INFO  08-08-2019 00:08:00 Microsoft.AspNetCore.Routing.EndpointMiddleware [61] - Executed endpoint 'Biblioteca.Controllers.CategoryController.RemoveCategoryByIdAsync (Biblioteca)' 
+INFO  08-08-2019 00:08:00 Microsoft.AspNetCore.Hosting.Internal.WebHost [61] - Request finished in 41.411ms 200  
+INFO  08-08-2019 00:08:31 Microsoft.AspNetCore.Hosting.Internal.WebHost [61] - Request starting HTTP/1.1 GET http://localhost:5000/api/categories?Page=1&PageSize=2   
+INFO  08-08-2019 00:08:31 Microsoft.AspNetCore.Routing.EndpointMiddleware [61] - Executing endpoint 'Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca)' 
+INFO  08-08-2019 00:08:31 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [61] - Route matched with {action = "GetCategories", controller = "Category", page = ""}. Executing action Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca) 
+INFO  08-08-2019 00:08:31 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [61] - Executing action method Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca) with arguments (Biblioteca.Core.Models.GenericQuery) - Validation state: Valid 
+INFO  08-08-2019 00:08:31 Microsoft.EntityFrameworkCore.Infrastructure [61] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  08-08-2019 00:08:31 Microsoft.EntityFrameworkCore.Database.Command [61] - Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM (
+    SELECT [C].*
+    FROM [Categories] AS [C]
+    ORDER BY [C].[Id]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t] 
+INFO  08-08-2019 00:08:31 Microsoft.EntityFrameworkCore.Database.Command [61] - Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [C].[Id], [C].[Description], [C].[LastUpdate], [C].[Name]
+FROM [Categories] AS [C]
+ORDER BY [C].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+INFO  08-08-2019 00:08:31 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [61] - Executed action method Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.6787ms. 
+INFO  08-08-2019 00:08:31 Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [61] - Executing ObjectResult, writing value of type 'Biblioteca.Controllers.Resources.QueryResultResource`1[[Biblioteca.Controllers.Resources.CategoryResource, Biblioteca, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+INFO  08-08-2019 00:08:31 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [61] - Executed action Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca) in 3.9312ms 
+INFO  08-08-2019 00:08:31 Microsoft.AspNetCore.Routing.EndpointMiddleware [61] - Executed endpoint 'Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca)' 
+INFO  08-08-2019 00:08:31 Microsoft.AspNetCore.Hosting.Internal.WebHost [61] - Request finished in 4.6402ms 200 application/json; charset=utf-8 
+INFO  08-08-2019 00:08:44 Microsoft.AspNetCore.Hosting.Internal.WebHost [66] - Request starting HTTP/1.1 GET http://localhost:5000/api/categories   
+INFO  08-08-2019 00:08:44 Microsoft.AspNetCore.Routing.EndpointMiddleware [66] - Executing endpoint 'Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca)' 
+INFO  08-08-2019 00:08:44 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [66] - Route matched with {action = "GetCategories", controller = "Category", page = ""}. Executing action Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca) 
+INFO  08-08-2019 00:08:44 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [66] - Executing action method Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca) with arguments (Biblioteca.Core.Models.GenericQuery) - Validation state: Valid 
+INFO  08-08-2019 00:08:44 Microsoft.EntityFrameworkCore.Infrastructure [66] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  08-08-2019 00:08:44 Microsoft.EntityFrameworkCore.Database.Command [61] - Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM (
+    SELECT [C].*
+    FROM [Categories] AS [C]
+    ORDER BY [C].[Id]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t] 
+INFO  08-08-2019 00:08:44 Microsoft.EntityFrameworkCore.Database.Command [61] - Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [C].[Id], [C].[Description], [C].[LastUpdate], [C].[Name]
+FROM [Categories] AS [C]
+ORDER BY [C].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+INFO  08-08-2019 00:08:44 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [61] - Executed action method Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.7477ms. 
+INFO  08-08-2019 00:08:44 Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [61] - Executing ObjectResult, writing value of type 'Biblioteca.Controllers.Resources.QueryResultResource`1[[Biblioteca.Controllers.Resources.CategoryResource, Biblioteca, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+INFO  08-08-2019 00:08:44 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [61] - Executed action Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca) in 4.5236ms 
+INFO  08-08-2019 00:08:44 Microsoft.AspNetCore.Routing.EndpointMiddleware [61] - Executed endpoint 'Biblioteca.Controllers.CategoryController.GetCategories (Biblioteca)' 
+INFO  08-08-2019 00:08:44 Microsoft.AspNetCore.Hosting.Internal.WebHost [61] - Request finished in 5.0827ms 200 application/json; charset=utf-8 
+INFO  08-12-2019 00:12:02 Microsoft.AspNetCore.Hosting.Internal.WebHost [73] - Request starting HTTP/1.1 POST http://localhost:5000/api/books/ application/json 93 
+INFO  08-12-2019 00:12:02 Microsoft.AspNetCore.Routing.EndpointMiddleware [73] - Executing endpoint 'Biblioteca.Controllers.BookController.AddBook (Biblioteca)' 
+INFO  08-12-2019 00:12:02 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [73] - Route matched with {action = "AddBook", controller = "Book", page = ""}. Executing action Biblioteca.Controllers.BookController.AddBook (Biblioteca) 
+INFO  08-12-2019 00:12:02 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [73] - Executing action method Biblioteca.Controllers.BookController.AddBook (Biblioteca) with arguments (Biblioteca.Controllers.Resources.SaveBookResource) - Validation state: Invalid 
+INFO  08-12-2019 00:12:02 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [73] - Executed action method Biblioteca.Controllers.BookController.AddBook (Biblioteca), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 0.6457ms. 
+INFO  08-12-2019 00:12:02 Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [73] - Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'. 
+INFO  08-12-2019 00:12:02 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [73] - Executed action Biblioteca.Controllers.BookController.AddBook (Biblioteca) in 50.863ms 
+INFO  08-12-2019 00:12:02 Microsoft.AspNetCore.Routing.EndpointMiddleware [73] - Executed endpoint 'Biblioteca.Controllers.BookController.AddBook (Biblioteca)' 
+INFO  08-12-2019 00:12:02 Microsoft.AspNetCore.Hosting.Internal.WebHost [73] - Request finished in 51.5264ms 400 application/json; charset=utf-8 
+INFO  08-12-2019 00:12:15 Microsoft.AspNetCore.Hosting.Internal.WebHost [77] - Request starting HTTP/1.1 POST http://localhost:5000/api/books/ application/json 93 
+INFO  08-12-2019 00:12:15 Microsoft.AspNetCore.Routing.EndpointMiddleware [77] - Executing endpoint 'Biblioteca.Controllers.BookController.AddBook (Biblioteca)' 
+INFO  08-12-2019 00:12:15 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [77] - Route matched with {action = "AddBook", controller = "Book", page = ""}. Executing action Biblioteca.Controllers.BookController.AddBook (Biblioteca) 
+INFO  08-12-2019 00:12:15 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [77] - Executing action method Biblioteca.Controllers.BookController.AddBook (Biblioteca) with arguments (Biblioteca.Controllers.Resources.SaveBookResource) - Validation state: Valid 
+INFO  08-12-2019 00:12:15 Microsoft.EntityFrameworkCore.Infrastructure [77] - Entity Framework Core 2.2.6-servicing-10079 initialized 'LibraryDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+INFO  08-12-2019 00:12:15 Microsoft.EntityFrameworkCore.Database.Command [77] - Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Books] ([AuthorId], [ISBN], [LastUpdate], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Books]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); 
+INFO  08-12-2019 00:12:15 Microsoft.EntityFrameworkCore.Database.Command [77] - Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [BookCategory] ([BookId], [CategoryId])
+VALUES (@p0, @p1); 
+INFO  08-12-2019 00:12:15 Microsoft.EntityFrameworkCore.Database.Command [77] - Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [BookCategory] ([BookId], [CategoryId])
+VALUES (@p0, @p1); 
+INFO  08-12-2019 00:12:15 Microsoft.EntityFrameworkCore.Database.Command [78] - Executed DbCommand (2ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [B].[Id], [B].[AuthorId], [B].[ISBN], [B].[LastUpdate], [B].[Name], [B.Author].[Id], [B.Author].[BirthDay], [B.Author].[LastName], [B.Author].[LastUpdate], [B.Author].[Name]
+FROM [Books] AS [B]
+INNER JOIN [Authors] AS [B.Author] ON [B].[AuthorId] = [B.Author].[Id]
+WHERE [B].[Id] = @__bookId_0
+ORDER BY [B].[Id] 
+INFO  08-12-2019 00:12:15 Microsoft.EntityFrameworkCore.Database.Command [79] - Executed DbCommand (1ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [B.Categories].[BookId], [B.Categories].[CategoryId]
+FROM [BookCategory] AS [B.Categories]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [B0].[Id]
+        FROM [Books] AS [B0]
+        INNER JOIN [Authors] AS [B.Author0] ON [B0].[AuthorId] = [B.Author0].[Id]
+        WHERE [B0].[Id] = @__bookId_0
+        ORDER BY [B0].[Id]
+    ) AS [t]
+) AS [t0] ON [B.Categories].[BookId] = [t0].[Id]
+ORDER BY [t0].[Id] 
+INFO  08-12-2019 00:12:15 Biblioteca.Controllers.BookController [79] - [null] 
+INFO  08-12-2019 00:12:15 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [79] - Executed action method Biblioteca.Controllers.BookController.AddBook (Biblioteca), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 19.1984ms. 
+INFO  08-12-2019 00:12:15 Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [79] - Executing ObjectResult, writing value of type 'System.String'. 
+INFO  08-12-2019 00:12:15 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [79] - Executed action Biblioteca.Controllers.BookController.AddBook (Biblioteca) in 20.7243ms 
+INFO  08-12-2019 00:12:15 Microsoft.AspNetCore.Routing.EndpointMiddleware [79] - Executed endpoint 'Biblioteca.Controllers.BookController.AddBook (Biblioteca)' 
+INFO  08-12-2019 00:12:15 Microsoft.AspNetCore.Hosting.Internal.WebHost [79] - Request finished in 21.4194ms 400 text/plain; charset=utf-8 

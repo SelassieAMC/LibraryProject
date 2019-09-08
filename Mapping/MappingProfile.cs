@@ -13,7 +13,14 @@ namespace Biblioteca.Mapping
             CreateMap<Category,CategoryResource>();
             CreateMap<QueryResult<Category>,QueryResultResource<CategoryResource>>();
             CreateMap<QueryResult<Author>,QueryResultResource<AuthorResource>>();
-            
+            CreateMap<QueryResult<Book>,QueryResultResource<BookResource>>();
+            CreateMap<Book, BookResource>()
+                .ForMember(br => br.Categories, opt => 
+                    opt.MapFrom (b => b.Categories
+                    .Select(bc => new KeyValuePair { Id = bc.Category.Id, Name = bc.Category.Name})))
+                .ForMember(br => br.Author, opt => 
+                    opt.MapFrom (b => new KeyValuePair { Id = b.Author.Id, Name = b.Author.Name}));
+            CreateMap<BookCategory, BookCategoryResource>();
             //API Resource to Domain Model
             CreateMap<AuthorResource,Author>();
             CreateMap<CategoryResource,Category>();

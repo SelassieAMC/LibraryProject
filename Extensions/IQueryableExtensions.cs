@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices.ComTypes;
 using System.Linq;
 using Biblioteca.Core;
 using Biblioteca.Core.Models;
@@ -14,8 +15,10 @@ namespace Biblioteca.Extensions
             if (queryObj.AuthorId.HasValue)
                 query = query.Where(b => b.AuthorId == queryObj.AuthorId.Value);
 
-                //falto por categoria
+            if(queryObj.CategoryId.HasValue)
+                query = query.Where(b => b.Categories.Any(bc => bc.CategoryId == queryObj.CategoryId.Value));
 
+            
             return query; 
         }
         public static IQueryable<T> ApplyPaging<T>(this IQueryable<T> query, IQueryObject queryObj){
