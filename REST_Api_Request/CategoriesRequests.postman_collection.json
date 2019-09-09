@@ -140,6 +140,28 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "GetCategoryById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/categories/getcategory/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"categories",
+						"getcategory",
+						"4"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

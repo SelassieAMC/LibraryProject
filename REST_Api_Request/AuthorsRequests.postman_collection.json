@@ -142,6 +142,28 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "GetAuthorById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/authors/getauthor/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"authors",
+						"getauthor",
+						"5"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
