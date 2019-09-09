@@ -30,8 +30,7 @@ export class BooksService {
   }
 
   deleteBook(id){
-    return this.http.delete(this.bookEndPoint+'/remove/'+id)
-    .pipe(map(res => res.json()));
+    return this.http.delete(this.bookEndPoint+'/remove/'+id);
   }
 
   queryString(obj){

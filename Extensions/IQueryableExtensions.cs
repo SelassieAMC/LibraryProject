@@ -9,14 +9,14 @@ namespace Biblioteca.Extensions
     {
         public static IQueryable<Book> ApplyFiltering(this IQueryable<Book> query, BookQuery queryObj)
         {
-            if (queryObj.BookId.HasValue)
-                query = query.Where(b => b.Id == queryObj.BookId.Value);
+            if (queryObj.BookName!=null)
+                query = query.Where(b => b.Name == queryObj.BookName);
 
-            if (queryObj.AuthorId.HasValue)
-                query = query.Where(b => b.AuthorId == queryObj.AuthorId.Value);
+            if (queryObj.AuthorName!=null)
+                query = query.Where(b => b.Author.Name == queryObj.AuthorName);
 
-            if(queryObj.CategoryId.HasValue)
-                query = query.Where(b => b.Categories.Any(bc => bc.CategoryId == queryObj.CategoryId.Value));
+            if(queryObj.CategoryName!=null)
+                query = query.Where(b => b.Categories.Any(bc => bc.Category.Name == queryObj.CategoryName));
 
             
             return query; 

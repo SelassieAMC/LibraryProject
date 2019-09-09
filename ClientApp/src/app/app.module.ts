@@ -17,6 +17,8 @@ import { ToastrModule } from 'ng6-toastr-notifications';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { CategoryViewComponent } from './components/categories/category-view/category-view.component';
 import { BookViewComponent } from './components/books/book-view/book-view.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { BookViewComponent } from './components/books/book-view/book-view.compon
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    NgMultiSelectDropDownModule.forRoot(),
+    AutocompleteLibModule,
     RouterModule.forRoot([
       { path: '', component: BookListComponent, pathMatch: 'full' },
       { path: 'authors', component: AuthorListComponent },

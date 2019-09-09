@@ -10,19 +10,24 @@
         <div class="form-group row">
             <label for="author" class="col-sm-2 col-form-label">Author</label>
             <div class="col-sm-10">
-                <input class="form-control" type="text" name="authorId" id="author" [(ngModel)]="book.author.id">
+                <!-- <input class="form-control" type="text" name="authorId" id="author" [(ngModel)]="book.author.id"> -->
+                <ng-autocomplete [data]="authorsData" [searchKeyword]="authorKeyword" (selected)='selectEvent($event)'
+                [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate"
+                 name="authorId" id="author" [(ngModel)]="author.name"></ng-autocomplete>
             </div>
         </div>
         <div class="form-group row">
             <label for="categoryId" class="col-sm-2 col-form-label">Category</label>
             <div class="col-sm-10">
-                <input class="form-control" type="text" name="category" id="categoryId" [(ngModel)]="book.category.id">
+                <ng-multiselect-dropdown [placeholder]="'select categories'" [data]="dropdownCategories" 
+                  [settings]="dropdownSettings" name="categories" [(ngModel)]="selectedCategories" (onSelect)="onItemSelect($event)" (onDeSelect)="onDeSelect($event)" (onSelectAll)="onSelectAll($event)">
+                </ng-multiselect-dropdown>
             </div>
         </div>
         <div class="form-group row">
             <label for="isbnId" class="col-sm-2 col-form-label">ISBN</label>
             <div class="col-sm-10">
-                <input class="form-control" type="text" name="isbn" id="isbnId" [(ngModel)]="book.isbn">
+                <input class="form-control" type="text" name="isbn" id="isbnId" [(ngModel)]="book.isbn" required #isbn="ngModel">
             </div>
         </div>
     </div>
@@ -31,4 +36,9 @@
         <button *ngIf="book.id" class="btn btn-danger" (click)="delete()">Delete</button>
     </div>
 </form>
-
+<ng-template #itemTemplate let-item>
+  <a [innerHTML]="item.name"></a>
+</ng-template>
+<ng-template #notFoundTemplate let-notFound>
+  <div [innerHTML]="notFound"></div>
+</ng-template>
