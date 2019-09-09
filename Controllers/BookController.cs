@@ -119,5 +119,22 @@ namespace Biblioteca.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        ///Metodo get para obtener libro por id
+        ///Recibe entero con el id del libro
+        ///Devuelve resultado del proceso de busqueda
+        [HttpGet("getbook/{id}")]
+        public async Task<IActionResult> GetAuthorById(int id){
+            try
+            {
+                var book = await bookRepository.GetBookByIdAsync(id);
+                if(book==null)
+                    return NotFound();
+                return Ok (mapper.Map<Book,BookResource>(book));
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

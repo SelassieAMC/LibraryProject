@@ -1,0 +1,22 @@
+<h2>Books</h2>
+<a [routerLink]="['/book']" routerLinkActive="btn btn-primary" class="btn btn-primary">Create Author</a>
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Autor</th>
+      <th>ISBN</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let b of queryResult.items">
+      <td>{{ b.name }}</td>
+      <td>{{ b.author.name }}</td>
+      <td>{{ b.isbn }}</td>
+      <td>
+        <a [routerLink]="['/book/', b.id]">Details</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

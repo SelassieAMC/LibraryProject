@@ -4,32 +4,50 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
-import { AuthorListComponent } from './components/author-list/author-list.component';
-import { CategoryListComponent } from './components/category-list/category-list.component';
-import { BookListComponent } from './components/book-list/book-list.component';
+import { AuthorListComponent } from './components/authors/author-list/author-list.component';
+import { CategoryListComponent } from './components/categories/category-list/category-list.component';
+import { BookListComponent } from './components/books/book-list/book-list.component';
 import { AuthorsService } from './services/authors.service';
+import { AuthorViewComponent } from './components/authors/author-view/author-view.component';
+import { ToastrModule } from 'ng6-toastr-notifications';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { CategoryViewComponent } from './components/categories/category-view/category-view.component';
+import { BookViewComponent } from './components/books/book-view/book-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     AuthorListComponent,
+    AuthorViewComponent,
     BookListComponent,
-    CategoryListComponent
+    CategoryListComponent,
+    PaginationComponent,
+    CategoryViewComponent,
+    BookViewComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     HttpModule,
     FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: BookListComponent, pathMatch: 'full' },
-      { path: 'books', component: BookListComponent },
       { path: 'authors', component: AuthorListComponent },
-      { path: 'categories', component: CategoryListComponent }
+      { path: 'author/:id', component: AuthorViewComponent},
+      { path: 'author', component: AuthorViewComponent},
+      { path: 'categories', component: CategoryListComponent },
+      { path: 'category/:id', component: CategoryViewComponent},
+      { path: 'category', component: CategoryViewComponent},
+      { path: 'books', component: BookListComponent },
+      { path: 'book/:id', component: BookViewComponent},
+      { path: 'book', component: BookViewComponent}
     ])
   ],
   providers: [AuthorsService],

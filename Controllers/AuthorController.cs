@@ -110,5 +110,23 @@ namespace Biblioteca.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        ///Metodo get para obtener autor por id
+        ///Recibe entero con el id del autor
+        ///Devuelve resultado del proceso de busqueda
+        [HttpGet("getauthor/{id}")]
+        public async Task<IActionResult> GetAuthorById(int id){
+            try
+            {
+                var author = await authorsRepository.GetAuthorByIdAsync(id);
+                if(author==null)
+                    return NotFound();
+                return Ok (mapper.Map<Author,AuthorResource>(author));
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

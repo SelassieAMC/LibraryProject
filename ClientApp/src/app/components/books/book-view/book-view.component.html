@@ -1,0 +1,34 @@
+<h2>Book</h2>
+<form #f="ngForm">
+    <div class="well"> 
+        <div class="form-group row">
+            <label for="nameId" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="name" id="nameId" [(ngModel)]="book.name" required #name="ngModel">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="author" class="col-sm-2 col-form-label">Author</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="authorId" id="author" [(ngModel)]="book.author.id">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="categoryId" class="col-sm-2 col-form-label">Category</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="category" id="categoryId" [(ngModel)]="book.category.id">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="isbnId" class="col-sm-2 col-form-label">ISBN</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="isbn" id="isbnId" [(ngModel)]="book.isbn">
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-primary" [disabled]="!f.valid" (click)="save()">Save</button>
+        <button *ngIf="book.id" class="btn btn-danger" (click)="delete()">Delete</button>
+    </div>
+</form>
+

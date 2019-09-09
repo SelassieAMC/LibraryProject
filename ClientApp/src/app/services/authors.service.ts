@@ -6,13 +6,33 @@ import { map } from "rxjs/operators";
   providedIn: 'root'
 })
 export class AuthorsService {
-  private readonly authorEndPoint = '/api/authors/';
+  private readonly authorEndPoint = '/api/authors';
 
   constructor(private http: Http) { }
   
   getAuthors(filter){
    return this.http.get(this.authorEndPoint + '?' + this.queryString(filter))
       .pipe(map(res => res.json()));
+  }
+
+  getAuthorById(id){
+    return this.http.get(this.authorEndPoint +'/getauthor/'+ id)
+    .pipe(map(res => res.json()));
+  }
+
+  createAuthor(author){
+    return this.http.post(this.authorEndPoint,author)
+    .pipe(map(res => res.json()));
+  }
+
+  updateAuthor(author){
+    return this.http.put(this.authorEndPoint+'/update/'+author.id, author)
+    .pipe(map(res => res.json()));
+  }
+
+  deleteAuthor(id){
+    return this.http.delete(this.authorEndPoint+'/remove/'+id)
+    .pipe(map(res => res.json()));
   }
 
   queryString(obj){

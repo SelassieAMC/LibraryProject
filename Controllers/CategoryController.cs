@@ -110,5 +110,22 @@ namespace Biblioteca.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        ///Metodo get para obtener categoria por id
+        ///Recibe entero con el id de la categoria
+        ///Devuelve resultado del proceso de busqueda
+        [HttpGet("getcategory/{id}")]
+        public async Task<IActionResult> GetCategoryById(int id){
+            try
+            {
+                var category = await categoriesRepository.GetCategoryByIdAsync(id);
+                if(category==null)
+                    return NotFound();
+                return Ok (mapper.Map<Category,CategoryResource>(category));
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

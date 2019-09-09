@@ -1,0 +1,23 @@
+<h2>Authors</h2>
+<button class="btn btn-primary" (click)="createAuthor()">Create Author</button>
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Last Name</th>
+        <th>BirthDay</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of queryResult.items">
+        <td>{{ a.name }}</td>
+        <td>{{ a.lastName }}</td>
+        <td>{{ a.birthDay }}</td>
+        <td>
+          <a [routerLink]="['/author/', a.id]">Details</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <pagination [total-items]="queryResult.totalItems" [page-size]="query.pageSize" (page-changed)="onPageChanged($event)"></pagination> -->
