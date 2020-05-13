@@ -27,7 +27,7 @@
     "aspnet-prerendering": "^3.0.1",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng-multiselect-dropdown": "^0.2.4",
     "ng6-toastr-notifications": "^1.0.4",
     "popper.js": "^1.14.7",
